@@ -7,11 +7,11 @@ lab:
 # Laboratório – Implementar e gerenciar o armazenamento para AVD (AD DS)
 # Manual de laboratório do aluno
 
-## Dependências de laboratório
+## Dependências do laboratório
 
-- Uma assinatura do Azure que você usará neste laboratório.
-- Uma conta da Microsoft ou uma conta do Microsoft Entra com a função de Proprietário ou Colaborador na assinatura do Azure a qual você usará neste laboratório e com a função de Administrador Global no locatário do Microsoft Entra associado a essa assinatura do Azure.
-- O laboratório completo **Preparar para a implantação da Área de Trabalho Virtual do Azure (AD DS)**
+- O nome da assinatura do Azure que você usará nesse laboratório
+- Uma conta Microsoft ou uma conta do Microsoft Entra com a função de Proprietário ou Colaborador na assinatura do Azure que você usará neste laboratório e com a função de Administrador Global no locatário do Microsoft Entra associado a essa assinatura do Azure.
+- O laboratório concluído: **Preparar para a implantação da Área de Trabalho Virtual do Azure (AD DS)**
 
 ## Tempo estimado
 
@@ -35,7 +35,7 @@ Depois de realizar este laboratório, você será capaz de:
 
 ### Exercício 1: Configurar os Arquivos do Azure para armazenar contêineres de perfil para a Área de Trabalho Virtual do Azure
 
-As principais tarefas deste exercício são as seguintes:
+As principais tarefas desse exercício são as seguintes:
 
 1. Criar uma conta de Armazenamento do Azure
 1. Criar um compartilhamento dos Arquivos do Azure
@@ -46,8 +46,8 @@ As principais tarefas deste exercício são as seguintes:
 #### Tarefa 1: Criar uma conta de Armazenamento do Azure
 
 1. No seu computador de laboratório, inicie um navegador da Web, navegue até o [portal do Azure](https://portal.azure.com) e entre fornecendo credenciais de uma conta de usuário com a função de Proprietário na assinatura que você usará neste laboratório.
-1. No portal do Azure, pesquise e selecione **Máquinas virtuais** e, na folha **Máquinas virtuais**, selecione **az140-dc-vm11**.
-1. Na folha **az140-dc-vm11**, selecione **Conectar**, no menu suspenso, selecione **Bastion**, no guia **Bastion** da folha **Conectar \| az140-dc-vm11**, selecione **Usar o Bastion**.
+1. No portal do Azure, pesquise e selecione **Máquinas Virtuais** e, na folha **Máquinas Virtuais**, selecione **az140-dc-vm11**.
+1. Na folha **az140-dc-vm11**, selecione **Conectar**, no menu suspenso, selecione **Bastion**, na guia **Bastion** da folha **Conectar \|az140-dc-vm11**, selecione **Usar o Bastion**.
 1. Quando solicitado, forneça as seguintes credenciais e selecione **Conectar**:
 
    |Configuração|Valor|
@@ -69,7 +69,7 @@ As principais tarefas deste exercício são as seguintes:
    |Redundância|**Armazenamento com redundância geográfica (GRS)**|
    |Disponibilizar o acesso de leitura de dados no caso de indisponibilidade regional|Habilitado|
 
-   >**Observação**: Garanta que o comprimento do nome da conta de armazenamento não exceda 15 caracteres. O nome será usado para criar uma conta de computador no domínio AD DS (Active Directory Domain Services), integrado ao locatário do Microsoft Entra associado à assinatura do Azure que contém a conta de armazenamento. Isso permitirá a autenticação baseada no AD DS ao acessar o compartilhamento de arquivo hospedado nessa conta de armazenamento.
+   >**Observação**: Garanta que o comprimento do nome da conta de armazenamento não exceda 15 caracteres. O nome será usado para criar uma conta de computador no domínio Active Directory Domain Services (AD DS) integrado ao locatário do Microsoft Entra associado à assinatura do Azure que contém a conta de armazenamento. Isso permitirá a autenticação baseada em AD DS ao acessar compartilhamentos de arquivos hospedados nessa conta de armazenamento.
 
 1. Na guia **Básico** da folha **Criar conta de armazenamento**, selecione **Examinar + Criar**, aguarde a conclusão do processo de validação e selecione **Criar**.
 

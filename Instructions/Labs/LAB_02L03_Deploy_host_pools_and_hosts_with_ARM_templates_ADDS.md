@@ -7,12 +7,12 @@ lab:
 # Laboratório: implantar pools de hosts e hosts usando modelos do Azure Resource Manager
 # Manual de laboratório do aluno
 
-## Dependências de laboratório
+## Dependências do laboratório
 
-- O nome da assinatura do Azure que você usará nesse laboratório.
+- O nome da assinatura do Azure que você usará nesse laboratório
 - Uma conta Microsoft ou uma conta do Microsoft Entra com a função de Proprietário ou Colaborador na assinatura do Azure que você usará neste laboratório e com a função de Administrador Global no locatário do Microsoft Entra associado a essa assinatura do Azure.
-- O laboratório concluído **Preparar para a implantação da Área de Trabalho Virtual do Azure (AD DS)**
-- O laboratório concluído **Implantar pools de hosts e hosts de sessão usando o portal do Azure (AD DS)**
+- O laboratório **Preparar para a implantação da Área de Trabalho Virtual do Azure (AD DS)** concluído
+- O laboratório **Implantar pools de hosts e hosts de sessão usando o portal do Azure (AD DS)** concluído
 
 ## Tempo estimado
 
@@ -268,17 +268,17 @@ As principais tarefas desse exercício são as seguintes:
 
 #### Tarefa 1: Desalocar VMs do Azure provisionadas no laboratório
 
-1. Alterne para o computador de laboratório e, na janela do navegador da Web que exibe o portal do Azure, abra a sessão do shell do **PowerShell** no painel do **Cloud Shell**.
-1. Na sessão do PowerShell no painel do Cloud Shell, execute o seguinte para listar todas as VMs do Azure criadas nesse laboratório:
+1. Alterne para o computador de laboratório e, na janela do navegador da Web que exibe o portal do Azure, abra a sessão do Shell do **PowerShell** no painel do **Cloud Shell**.
+1. Na sessão do PowerShell no painel do Cloud Shell, execute o seguinte para listar todas as VMs do Azure criadas neste laboratório:
 
    ```powershell
    Get-AzVM -ResourceGroup 'az140-23-RG'
    ```
 
-1. Na sessão do PowerShell no painel do Cloud Shell, execute o seguinte para parar e desalocar todas as VMs do Azure criadas nesse laboratório:
+1. Na sessão do PowerShell no painel do Cloud Shell, execute o seguinte para parar e desalocar todas as VMs do Azure criadas neste laboratório:
 
    ```powershell
    Get-AzVM -ResourceGroup 'az140-23-RG' | Stop-AzVM -NoWait -Force
    ```
 
-   >**Observação**: o comando é executado de modo assíncrono (conforme determinado pelo parâmetro -NoWait), portanto, embora você possa executar outro comando do PowerShell imediatamente depois na mesma sessão do PowerShell, levará alguns minutos antes de o grupo de recursos ser de fato removido.
+   >**Observação**: O comando é executado de modo assíncrono (conforme determinado pelo parâmetro -NoWait), portanto, embora você possa executar outro comando do PowerShell imediatamente depois na mesma sessão do PowerShell, levará alguns minutos antes de o grupo de recursos ser de fato removido.

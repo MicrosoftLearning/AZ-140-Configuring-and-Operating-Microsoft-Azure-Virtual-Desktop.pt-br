@@ -7,10 +7,10 @@ lab:
 # Laboratório - Implementar e gerenciar perfis da Área de Trabalho Virtual do Azure (AD DS)
 # Manual de laboratório do aluno
 
-## Dependências de laboratório
+## Dependências do laboratório
 
-- Uma assinatura do Azure que você usará neste laboratório.
-- Uma conta da Microsoft ou uma conta do Microsoft Entra com a função de Proprietário ou Colaborador na assinatura do Azure a qual você usará neste laboratório e com a função de Administrador Global no locatário do Microsoft Entra associado a essa assinatura do Azure.
+- O nome da assinatura do Azure que você usará nesse laboratório
+- Uma conta Microsoft ou uma conta do Microsoft Entra com a função de Proprietário ou Colaborador na assinatura do Azure que você usará neste laboratório e com a função de Administrador Global no locatário do Microsoft Entra associado a essa assinatura do Azure.
 - O laboratório completo **Preparar para a implantação da Área de Trabalho Virtual do Azure (AD DS)**
 - O laboratório completo **Implementar e gerenciar o armazenamento para AVD (AD DS)**
 
@@ -89,13 +89,13 @@ As principais tarefas deste exercício são as seguintes:
    Install-Module -Name Az -AllowClobber -SkipPublisherCheck
    ```
 
-1. No **ISE do Windows Power Shell: Console ISE** do Windows PowerShell, execute o seguinte para modificar a política de execução:
+1. A partir do **Administrador: Console ISE** do Windows PowerShell, execute o seguinte para modificar a política de execução:
 
    ```powershell
    Set-ExecutionPolicy RemoteSigned -Force
    ```
 
-1. No **ISE do Windows Power Shell: ISE do Windows PowerShell**, execute o seguinte para entrar em sua assinatura do Azure:
+1. A partir do **Administrador: ISE do Windows PowerShell**, execute o seguinte para entrar em sua assinatura do Azure:
 
    ```powershell
    Connect-AzAccount
@@ -183,7 +183,7 @@ As principais tarefas deste exercício são as seguintes:
 
 1. Alterne para o computador do laboratório, no computador do laboratório, na janela do navegador que exibe o portal do Azure, pesquise e selecione **Máquinas virtuais** e, na folha **Máquinas virtuais**, selecione a entrada**az140-cl-vm11**.
 1. Na folha **az140-cl-vm11**, selecione **Conectar**, no menu suspenso, selecione **Bastion**, na guia **Bastion** da folha **az140-cl-vm11 \| Conectar**, selecione **Usar Bastion**.
-1. Quando solicitado, providencie as seguintes credenciais e selecione **Conectar**:
+1. Quando solicitado, forneça as seguintes credenciais e selecione **Conectar**:
 
    |Configuração|Valor|
    |---|---|
@@ -223,7 +223,7 @@ As principais tarefas deste exercício são as seguintes:
 
 #### Tarefa 1: Desalocar VMs do Azure provisionadas e usadas no laboratório
 
-1. Alterne para o computador do laboratório e, na janela do navegador da Web que exibe o portal do Azure, abra a sessão do Shell do **PowerShell** no painel do **Cloud Shell**.
+1. Alterne para o computador de laboratório e, na janela do navegador da Web que exibe o portal do Azure, abra a sessão do shell do **PowerShell** no painel do **Cloud Shell**.
 1. Na sessão do PowerShell no painel do Cloud Shell, execute o seguinte para listar todas as VMs do Azure criadas e usadas neste laboratório:
 
    ```powershell
@@ -236,4 +236,4 @@ As principais tarefas deste exercício são as seguintes:
    Get-AzVM -ResourceGroup 'az140-21-RG' | Stop-AzVM -NoWait -Force
    ```
 
-   >**Observação**: O comando é executado de modo assíncrono (conforme determinado pelo parâmetro -NoWait), portanto, embora você possa executar outro comando do PowerShell imediatamente depois na mesma sessão do PowerShell, levará alguns minutos antes das VMs do Azure serem realmente interrompidas e desalocadas.
+   >**Observação**: O comando é executado de modo assíncrono (conforme determinado pelo parâmetro -NoWait), portanto, embora você possa executar outro comando do PowerShell imediatamente depois na mesma sessão do PowerShell, levará alguns minutos antes de o grupo de recursos ser de fato removido.

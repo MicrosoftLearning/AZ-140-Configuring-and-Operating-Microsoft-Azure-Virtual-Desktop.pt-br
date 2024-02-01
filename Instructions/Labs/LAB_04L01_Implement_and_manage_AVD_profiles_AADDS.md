@@ -7,7 +7,7 @@ lab:
 # Laboratório - implementar e gerenciar perfis da Área de Trabalho Virtual do Azure (Microsoft Entra DS)
 # Manual de laboratório do aluno
 
-## Dependências de laboratório
+## Dependências do laboratório
 
 - Uma assinatura do Azure
 - Uma conta Microsoft ou uma conta do Microsoft Entra com a função de administrador global no locatário do Microsoft Entra associado à assinatura do Azure e com a função de proprietário ou colaborador na assinatura
@@ -67,9 +67,9 @@ As principais tarefas deste exercício são as seguintes:
    ```
    
 1. Fechar o Cloud Shell
-1. No seu computador de laboratório, no portal do Azure, pesquise e selecione **Máquinas virtuais** e, na folha **Máquinas virtuais**, selecione a entrada **az140-cl-vm11a**. Isso irá abrir a folha **az140-cl-vm11a**.
+1. No seu computador de laboratório, no portal do Azure, pesquise e selecione **Máquinas virtuais** e, na folha **Máquinas virtuais**, selecione a entrada **az140-cl-vm11a**. Isso abrirá a folha **az140-cl-vm11a**.
 1. Na folha **az140-cl-vm11a**, selecione **Conectar**, no menu suspenso, selecione **Bastion**, na guia **Bastion** da folha **az140-cl-vm11a \| Conectar**, selecione **Usar Bastion**.
-1. Quando solicitado, providencie as seguintes credenciais e selecione **Conectar**:
+1. Quando solicitado, forneça as seguintes credenciais e selecione **Conectar**:
 
    |Configuração|Valor|
    |---|---|

@@ -7,7 +7,7 @@ lab:
 # Laboratório: preparar para a implantação da Área de Trabalho Virtual do Azure (AD DS)
 # Manual de laboratório do aluno
 
-## Dependências de laboratório
+## Dependências do laboratório
 
 - O nome da assinatura do Azure que você usará neste laboratório.
 - Uma conta Microsoft ou uma conta do Microsoft Entra com a função de Proprietário ou Colaborador na assinatura do Azure que você usará neste laboratório e com a função de Administrador Global no locatário do Microsoft Entra associado a essa assinatura do Azure.
@@ -44,7 +44,7 @@ As principais tarefas deste exercício são as seguintes:
 
 #### Tarefa 1: Identificar o uso atual da vCPU
 
-1. No seu computador de laboratório, inicie um navegador da Web, navegue até o [portal do Azure](https://portal.azure.com) e entre fornecendo credenciais de uma conta de usuário com a função Proprietário na assinatura que você usará neste laboratório.
+1. No seu computador de laboratório, inicie um navegador da Web, navegue até o [portal do Azure](https://portal.azure.com) e entre fornecendo credenciais de uma conta de usuário com a função Proprietário na assinatura que você usará nesse laboratório.
 1. No portal do Azure, abra o painel do **Cloud Shell** selecionando o ícone da barra de ferramentas diretamente à direita da caixa de texto de pesquisa.
 1. Se for solicitado que você selecione **Bash** ou **PowerShell**, selecione **PowerShell**. 
 
@@ -79,11 +79,11 @@ As principais tarefas deste exercício são as seguintes:
 
    > **Observação**: Para identificar os nomes das regiões do Azure, no **Cloud Shell** no prompt do PowerShell, execute `(Get-AzLocation).Location`.
    
-1. Examine a saída do comando executado na etapa anterior e verifique se você tem pelo menos **30** vCPUs disponíveis nas **vCPUs da Família DSv3 Standard** das VMs do Azure na região do Azure de destino. Se esse já for o caso, prossiga diretamente para o próximo exercício. Caso contrário, prossiga para a próxima tarefa deste exercício. 
+1. Examine a saída do comando executado na etapa anterior e verifique se você tem pelo menos **30** vCPUs disponíveis nas **vCPUs da Família DSv3 Standard** das VMs do Azure na região do Azure de destino. Se esse já for o caso, prossiga diretamente para o próximo exercício. Caso contrário, prossiga para a próxima tarefa desse exercício. 
 
 #### Tarefa 2: Solicitar aumento de cota de vCPU
 
-1. No portal do Azure, pesquise e selecione **Assinaturas** e, na folha **Assinaturas**, selecione a entrada que representa a assinatura do Azure que você pretende usar para este laboratório.
+1. No portal do Azure, pesquise e selecione **Assinaturas** e, na folha **Assinaturas**, selecione a entrada que representa a assinatura do Azure que você pretende usar para esse laboratório.
 1. Na folha que exibe a assinatura do Azure, no menu vertical à esquerda, na seção **Configurações**, selecione **Uso + cotas**. 
 
    **Observação:** Talvez você não precise abrir um tíquete de suporte para aumentar as cotas.
@@ -94,9 +94,9 @@ As principais tarefas deste exercício são as seguintes:
 1. Na lista de resultados, marque a caixa de seleção ao lado do item **VCPUs da Família DSv3 Standard**, selecione a entrada **Solicitar aumento de cota** na barra de ferramentas e, na lista suspensa, selecione **Inserir um novo limite**.
 1. No painel **Solicitar aumento de cota**, na caixa de texto de coluna**Novo limite**, digite **30**e selecione **Enviar**.
 1. Se solicitado, no painel **Solicitar aumento de cota**, selecione **Autenticar com a Autenticação multifator** e siga os prompts para autenticação.
-1. Permitir que a solicitação de cota seja concluída.  Após alguns instantes, a folha **Detalhes da Cota** especificará que a solicitação foi aprovada e Cota aumentada. Feche a folha **Detalhes da Cota**.
+1. Permitir que a solicitação de cota seja concluída.  Após alguns instantes, a folha **Detalhes da Cota** irá especificar que a solicitação foi aprovada e a Cota aumentada. Feche a folha **Detalhes da Cota**.
 
-   >**Observação**: Dependendo da escolha da região do Azure e da demanda atual, talvez seja necessário abrir uma solicitação de suporte. Para obter instruções sobre o processo de criação de solicitação de suporte, consulte [Criar uma solicitação de suporte do Azure](https://docs.microsoft.com/en-us/azure/azure-portal/supportability/how-to-create-azure-support-request).
+   >**Observação**: Dependendo da escolha da região do Azure e da demanda atual, talvez seja necessário gerar uma solicitação de suporte. Para obter instruções sobre o processo de criação de solicitação de suporte, consulte [Criar uma solicitação de suporte do Azure](https://docs.microsoft.com/en-us/azure/azure-portal/supportability/how-to-create-azure-support-request).
 
 ### Exercício 1: Implantar um domínio do Active Directory Domain Services (AD DS)
 
@@ -197,14 +197,14 @@ As principais tarefas deste exercício são as seguintes:
 
 1. Feche o painel do Cloud Shell.
 1. No portal do Azure, pesquise e selecione **Bastions** e, na folha **Bastions**, selecione **+ Criar**.
-1. Na guia **Noções Básica** da folha **Criar um Bastion**, especifique as seguintes configurações e selecione **Examinar + criar**:
+1. Na guia **Noções Básicas** da folha **Criar um Bastion**, especifique as seguintes configurações e selecione **Examinar + criar**:
 
    |Configuração|Valor|
    |---|---|
    |Assinatura|o nome da assinatura do Azure que você está usando neste laboratório|
    |Grupo de recursos|**az140-11-RG**|
    |Nome|**az140-11-bastion**|
-   |Region|a mesma região do Azure na qual você implantou os recursos nas tarefas anteriores desse exercício|
+   |Region|a mesma região do Azure na qual você implantou os recursos nas tarefas anteriores deste exercício|
    |Camada|**Basic**|
    |Rede virtual|**az140-adds-vnet11**|
    |Sub-rede|**AzureBastionSubnet (10.0.254.0/24)**|

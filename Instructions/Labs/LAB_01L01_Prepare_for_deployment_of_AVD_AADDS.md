@@ -7,7 +7,7 @@ lab:
 # Laboratório – Preparar-se para a implantação da Área de Trabalho Virtual do Azure (Microsoft Entra DS)
 # Manual de laboratório do aluno
 
-## Dependências de laboratório
+## Dependências do laboratório
 
 - Uma assinatura do Azure
 - Uma conta Microsoft ou uma conta do Microsoft Entra com a função de administrador global no locatário do Microsoft Entra associado à assinatura do Azure e com a função de proprietário ou colaborador na assinatura
@@ -288,7 +288,7 @@ As principais tarefas desse exercício são as seguintes:
 
 #### Tarefa 2: Implantar o Azure Bastion 
 
-> **Observação**: O Azure Bastion permite a conexão com as VMs do Azure sem pontos de extremidade públicos implantados na tarefa anterior desse exercício, ao mesmo tempo em que fornece proteção contra explorações de força bruta direcionadas às credenciais de nível do sistema operacional.
+> **Observação**: O Azure Bastion permite a conexão com as VMs do Azure sem pontos de extremidade públicos implantados na tarefa anterior deste exercício, ao mesmo tempo em que fornece proteção contra explorações de força bruta direcionadas às credenciais de nível do sistema operacional.
 
 > **Observação**: Verifique se o navegador tem a funcionalidade pop-up habilitada.
 
