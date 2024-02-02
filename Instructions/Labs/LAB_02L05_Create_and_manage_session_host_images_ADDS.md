@@ -9,7 +9,7 @@ lab:
 
 ## Dependências do laboratório
 
-- O nome da assinatura do Azure que você usará nesse laboratório.
+- O nome da assinatura do Azure que você usará nesse laboratório
 - Uma conta Microsoft ou uma conta do Microsoft Entra com a função de Proprietário ou Colaborador na assinatura do Azure que você usará neste laboratório e com a função de Administrador Global no locatário do Microsoft Entra associado a essa assinatura do Azure.
 - O laboratório concluído: **Preparar para a implantação da Área de Trabalho Virtual do Azure (AD DS)**
 
@@ -293,9 +293,9 @@ As principais tarefas desse exercício são as seguintes:
    |Configuração|Valor|
    |---|---|
    |Adicionar máquinas virtuais do Azure|**Sim**|
-   |Grupo de recursos|**O padrão é o mesmo que o do pool de hosts**|
+   |Grupo de recursos|**O padrão é o mesmo que o pool de hosts**|
    |Prefixo do nome|**az140-25-p4**|
-   |Localização da máquina virtual|o nome da região do Azure na qual você implantou recursos no primeiro exercício desse laboratório|
+   |Localização da máquina virtual|o nome da região do Azure na qual você implantou recursos no primeiro exercício deste laboratório|
    |Opções de disponibilidade|**Nenhuma redundância de infraestrutura necessária**|
    
 1. Na guia **Máquinas virtuais** da folha **Criar um pool de host**, diretamente abaixo da lista suspensa **Imagem**, clique no link **Ver todas as imagens**.
@@ -321,7 +321,7 @@ As principais tarefas desse exercício são as seguintes:
    |Senha|Pa55w.rd1234|
    |Confirmar senha|Pa55w.rd1234|
 
-1. Na guia **Workspace** da folha **Criar um pool** de hosts, especifique as seguintes configurações e selecione **Examinar + criar**:
+1. Na guia **Workspace** da folha **Criar um pool de hosts**, especifique as seguintes configurações e selecione **Examinar + criar**:
 
    |Configuração|Valor|
    |---|---|

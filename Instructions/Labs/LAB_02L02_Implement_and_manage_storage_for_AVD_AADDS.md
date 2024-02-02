@@ -11,7 +11,7 @@ lab:
 
 - Uma assinatura do Azure
 - Uma conta Microsoft ou uma conta do Microsoft Entra com a função de administrador global no locatário do Microsoft Entra associado à assinatura do Azure e com a função de proprietário ou colaborador na assinatura
-- O laboratório **Preparar para implantação da Área de Trabalho Virtual do Azure (Microsoft Entra DS)** concluído
+- O laboratório**Preparar para implantação da Área de Trabalho Virtual do Azure (Microsoft Entra DS)** concluído
 
 ## Tempo estimado
 
@@ -46,7 +46,7 @@ As principais tarefas desse exercício são as seguintes:
 #### Tarefa 1: Criar uma conta de Armazenamento do Azure
 
 1. No seu computador de laboratório, inicie um navegador da Web, navegue até o [portal do Azure](https://portal.azure.com) e entre fornecendo credenciais de uma conta de usuário com a função Proprietário na assinatura que você usará nesse laboratório.
-1. No seu computador de laboratório, no portal do Azure, pesquise e selecione **Máquinas virtuais** e, na folha **Máquinas virtuais**, selecione a entrada **az140-cl-vm11a**. Isso irá abrir a folha **az140-cl-vm11a**.
+1. No seu computador de laboratório, no portal do Azure, pesquise e selecione **Máquinas virtuais** e, na folha **Máquinas virtuais**, selecione a entrada **az140-cl-vm11a**. Isso abrirá a folha **az140-cl-vm11a**.
 1. Na folha **az140-cl-vm11a**, selecione **Conectar**, no menu suspenso, selecione **Bastion**, na guia **Bastion** da folha **az140-cl-vm11a \| Conectar**, selecione **Usar Bastion**.
 1. Quando solicitado, forneça as seguintes credenciais e selecione **Conectar**:
 

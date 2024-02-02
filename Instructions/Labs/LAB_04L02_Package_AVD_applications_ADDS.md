@@ -7,7 +7,7 @@ lab:
 # Laboratório – Empacotar aplicativos da Área de Trabalho Virtual do Azure (AD DS)
 # Manual de laboratório do aluno
 
-## Dependências de laboratório
+## Dependências do laboratório
 
 - Uma assinatura do Azure
 - Uma conta Microsoft ou uma conta do Microsoft Entra com a função de administrador global no locatário do Microsoft Entra associado à assinatura do Azure e com a função de proprietário ou colaborador na assinatura
@@ -313,7 +313,7 @@ As principais tarefas deste exercício são as seguintes:
 
 1. Alterne para o computador de laboratório, no navegador da Web que exibe o portal do Azure, pesquise e selecione **Máquinas virtuais** e, na folha **Máquinas virtuais**, selecione **az140-dc-vm11**.
 1. Na folha **az140-dc-vm11**, selecione **Conectar**, no menu suspenso, selecione **Bastion**, na guia **Bastion** da folha **az140-dc-vm11\| Conectar**, selecione **Usar Bastion**.
-1. Quando solicitado, providencie as seguintes credenciais e selecione **Conectar**:
+1. Quando solicitado, forneça as seguintes credenciais e selecione **Conectar**:
 
    |Configuração|Valor|
    |---|---|
@@ -346,7 +346,7 @@ As principais tarefas deste exercício são as seguintes:
    > **Observação**: Esta etapa garante que a alteração da associação de grupo entre em vigor. 
 
 1. Na sessão do Bastion para **az140-dc-vm11**, no menu **Iniciar**, expanda a pasta do **Microsoft Entra Connect** e selecione **Microsoft Entra Connect**.
-1. Na página **Bem-vindo ao Microsoft Entra Connect** da janela do **Microsoft Entra Connect**, selecione **Configurar**.
+1. Na página **Boas-vindas ao Microsoft Entra Connect** da janela do **Microsoft Entra Connect**, selecione **Configurar**.
 1. Na página **Tarefas adicionais** na janela do **Microsoft Entra Connect**, selecione **Personalizar opções de sincronização** e selecione **Avançar**.
 1. Na página **Conectar-se ao Microsoft Entra** na janela do **Microsoft Entra Connect**, autentique-se usando o nome principal do usuário da conta de usuário **aadsyncuser** que você identificou anteriormente nesta tarefa com a senha definida ao criar essa conta de usuário.
 1. Na página **Conectar seus diretórios** na janela do **Microsoft Entra Connect**, selecione **Avançar**.
@@ -354,7 +354,7 @@ As principais tarefas deste exercício são as seguintes:
 1. Na página **Recursos opcionais** na janela do **Microsoft Entra Connect**, aceite as configurações padrão e selecione **Avançar**.
 1. Na página **Pronto para configurar** na janela do **Microsoft Entra Connect**, verifique se a caixa de seleção **Iniciar o processo de sincronização quando a configuração for concluída** está selecionada e selecione **Configurar**.
 1. Examine as informações na página **Configuração concluída** e selecione **Sair** para fechar a janela do **Microsoft Entra Connect**.
-1. Na sessão do Bastion para **az140-dc-vm11**, inicie o Microsoft Edge e navegue até o [portal do Azure](https://portal.azure.com). Quando solicitado, entre usando as credenciais do Microsoft Entra da conta de usuário com a função de Administrador Global no locatário do Microsoft Entra associado à assinatura do Azure que você está usando neste laboratório.
+1. Na sessão do Bastion para **az140-dc-vm11**, inicie o Microsoft Edge e navegue até o [portal do Azure](https://portal.azure.com). Quando solicitado, entre usando as credenciais do Microsoft Entra da conta de usuário com a função de Administrador Global no locatário do Microsoft Entra associado à assinatura do Azure que você está usando nesse laboratório.
 1. Na sessão do Bastion para **az140-dc-vm11**, na janela do Microsoft Edge exibindo o portal do Azure, pesquise e selecione o **Azure Active Directory** para navegar até o locatário do Microsoft Entra associado à assinatura do Azure que você está usando para este laboratório.
 1. Na folha do Azure Active Directory, na barra de menus vertical no lado esquerdo, na seção **Gerenciar**, clique em **Grupos**. 
 1. Na folha **Grupos | Todos os grupos**, na lista de grupos, selecione a entrada **az140-hosts-42-p1**.
@@ -509,7 +509,7 @@ As principais tarefas deste exercício são as seguintes:
 
 #### Tarefa 1: Desalocar VMs do Azure provisionadas e usadas no laboratório
 
-1. Alterne para o computador do laboratório e, na janela do navegador da Web que exibe o portal do Azure, abra a sessão do Shell do **PowerShell** no painel do **Cloud Shell**.
+1. Alterne para o computador de laboratório e, na janela do navegador da Web que exibe o portal do Azure, abra a sessão do shell do **PowerShell** no painel do **Cloud Shell**.
 1. Na sessão do PowerShell no painel do Cloud Shell, execute o seguinte para listar todas as VMs do Azure criadas e usadas neste laboratório:
 
    ```powershell
@@ -524,4 +524,4 @@ As principais tarefas deste exercício são as seguintes:
    Get-AzVM -ResourceGroup 'az140-42-RG' | Stop-AzVM -NoWait -Force
    ```
 
-   >**Observação**: O comando é executado de modo assíncrono (conforme determinado pelo parâmetro -NoWait), portanto, embora você possa executar outro comando do PowerShell imediatamente depois na mesma sessão do PowerShell, levará alguns minutos antes das VMs do Azure serem realmente interrompidas e desalocadas.
+   >**Observação**: O comando é executado de modo assíncrono (conforme determinado pelo parâmetro -NoWait), portanto, embora você possa executar outro comando do PowerShell imediatamente depois na mesma sessão do PowerShell, levará alguns minutos antes de o grupo de recursos ser de fato removido.
