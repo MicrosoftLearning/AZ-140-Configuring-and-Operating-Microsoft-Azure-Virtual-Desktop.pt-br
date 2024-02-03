@@ -7,7 +7,7 @@ lab:
 # Laboratório - implantar e gerenciar pools de hosts e hosts usando o PowerShell
 # Manual de laboratório do aluno
 
-## Dependências de laboratório
+## Dependências do laboratório
 
 - Uma assinatura do Azure que você usará neste laboratório.
 - Uma conta da Microsoft ou uma conta do Azure AD com a função de Proprietário ou Colaborador na assinatura do Azure a qual você usará neste laboratório e com a função de Administrador Global no locatário do Azure AD associado a essa assinatura do Azure.
@@ -48,9 +48,9 @@ As principais tarefas deste exercício são as seguintes:
 #### Tarefa 1: Preparar-se para a implantação do pool de hosts da Área de Trabalho Virtual do Azure usando o PowerShell
 
 1. No seu computador de laboratório, inicie um navegador da Web, navegue até o [portal do Azure](https://portal.azure.com) e entre fornecendo credenciais de uma conta de usuário com a função Proprietário na assinatura que você usará neste laboratório.
-1. No portal do Azure, pesquise e selecione **Máquinas virtuais** e, na folha **Máquinas virtuais**, selecione **az140-dc-vm11**.
-1. Na folha **az140-dc-vm11**, selecione **Conectar**, no menu suspenso, selecione **Bastion**, no guia **Bastion** da folha **Conectar \| az140-dc-vm11**, selecione **Usar o Bastion**.
-1. Quando solicitado, providencie as seguintes credenciais e selecione **Conectar**:
+1. No portal do Azure, pesquise e selecione **Máquinas Virtuais** e, na folha **Máquinas Virtuais**, selecione **az140-dc-vm11**.
+1. Na folha **az140-dc-vm11**, selecione **Conectar**, no menu suspenso, selecione **Bastion**, na guia **Bastion** da folha **Conectar \|az140-dc-vm11**, selecione **Usar o Bastion**.
+1. Quando solicitado, forneça as seguintes credenciais e selecione **Conectar**:
 
    |Configuração|Valor|
    |---|---|
@@ -296,25 +296,25 @@ As principais tarefas deste exercício são as seguintes:
 
 ### Exercício 2: Parar e desalocar VMs do Azure provisionadas no laboratório
 
-As principais tarefas deste exercício são as seguintes:
+As principais tarefas desse exercício são as seguintes:
 
 1. Parar e desalocar VMs do Azure provisionadas no laboratório
 
->**Observação**: Neste exercício, você desalocará as VMs do Azure provisionadas neste laboratório para minimizar os encargos de computação correspondentes
+>**Observação**: Nesse exercício, você desalocará as VMs do Azure provisionadas neste laboratório para minimizar os encargos de computação correspondentes
 
 #### Tarefa 1: Desalocar VMs do Azure provisionadas no laboratório
 
-1. Alterne para o computador do laboratório e, na janela do navegador da Web que exibe o portal do Azure, abra a sessão do Shell do **PowerShell** no painel do **Cloud Shell**.
+1. Alterne para o computador de laboratório e, na janela do navegador da Web que exibe o portal do Azure, abra a sessão do Shell do **PowerShell** no painel do **Cloud Shell**.
 1. Na sessão do PowerShell no painel do Cloud Shell, execute o seguinte para listar todas as VMs do Azure criadas neste laboratório:
 
    ```powershell
    Get-AzVM -ResourceGroup 'az140-24-RG'
    ```
 
-1. Na sessão do PowerShell no painel do Cloud Shell, execute o seguinte para parar e desalocar todas as VMs do Azure que você criou neste laboratório:
+1. Na sessão do PowerShell no painel do Cloud Shell, execute o seguinte para parar e desalocar todas as VMs do Azure criadas neste laboratório:
 
    ```powershell
    Get-AzVM -ResourceGroup 'az140-24-RG' | Stop-AzVM -NoWait -Force
    ```
 
-   >**Observação**: O comando é executado de modo assíncrono (conforme determinado pelo parâmetro -NoWait), portanto, embora você possa executar outro comando do PowerShell imediatamente depois na mesma sessão do PowerShell, levará alguns minutos antes das VMs do Azure serem realmente interrompidas e desalocadas.
+   >**Observação**: O comando é executado de modo assíncrono (conforme determinado pelo parâmetro -NoWait), portanto, embora você possa executar outro comando do PowerShell imediatamente depois na mesma sessão do PowerShell, levará alguns minutos antes de o grupo de recursos ser de fato removido.

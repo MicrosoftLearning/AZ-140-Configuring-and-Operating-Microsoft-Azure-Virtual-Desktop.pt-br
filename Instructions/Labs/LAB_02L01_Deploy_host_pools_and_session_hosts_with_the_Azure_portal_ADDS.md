@@ -7,11 +7,11 @@ lab:
 # Laboratório: Implantar pools de hosts e hosts de sessão usando o portal do Azure (AD DS)
 # Manual de laboratório do aluno
 
-## Dependências de laboratório
+## Dependências do laboratório
 
-- O nome da assinatura do Azure que você usará nesse laboratório.
+- O nome da assinatura do Azure que você usará nesse laboratório
 - Uma conta Microsoft ou uma conta do Microsoft Entra com a função de Proprietário ou Colaborador na assinatura do Azure que você usará neste laboratório e com a função de Administrador Global no locatário do Microsoft Entra associado a essa assinatura do Azure.
-- O laboratório concluído **Preparar para a implantação da Área de Trabalho Virtual do Azure (AD DS)**
+- O laboratório concluído: **Preparar para a implantação da Área de Trabalho Virtual do Azure (AD DS)**
 
 ## Tempo estimado
 
@@ -253,7 +253,7 @@ As principais tarefas desse exercício são as seguintes:
 
 1. Na sessão da Área de Trabalho Remota para **az140-dc-vm11**, pesquise e selecione **Área de Trabalho Virtual do Azure** e, na folha **Área de Trabalho Virtual do Azure**, selecione **Grupos de aplicativos**.
 1. Na folha **Grupos de Aplicativos \| da Área de Trabalho Virtual do Azure**, selecione **+ Criar**. 
-1. Na guia **Noções básicas** da folha **Criar um grupo de aplicativos**, especifique as seguintes configurações e selecione **Avançar: Aplicativos > **:
+1. Na guia **Noções básicas** da folha **Criar um grupo de aplicativos**, especifique as seguintes configurações e selecione **Avançar: Aplicativos >**:
 
    |Configuração|Valor|
    |---|---|
@@ -318,7 +318,7 @@ As principais tarefas desse exercício são as seguintes:
   
 As principais tarefas desse exercício são as seguintes:
 
-1. Instalar o cliente da Área de Trabalho Remota (MSRDC) da Microsoft em um computador Windows 10
+1. Instalar o cliente de Área de Trabalho Remota (MSRDC) da Microsoft em um computador Windows 10
 1. Assinar um workspace da Área de Trabalho Virtual do Azure
 1. Testar aplicativos da Área de Trabalho Virtual do Azure
 
@@ -382,18 +382,18 @@ As principais tarefas desse exercício são as seguintes:
 
 1. Parar e desalocar VMs do Azure provisionadas no laboratório
 
->**Observação**: Neste exercício, você desalocará as VMs do Azure provisionadas neste laboratório para minimizar os encargos de computação correspondentes
+>**Observação**: Nesse exercício, você desalocará as VMs do Azure provisionadas neste laboratório para minimizar os encargos de computação correspondentes
 
 #### Tarefa 1: Desalocar VMs do Azure provisionadas no laboratório
 
 1. Alterne para o computador de laboratório e, na janela do navegador da Web que exibe o portal do Azure, abra a sessão do Shell do **PowerShell** no painel do **Cloud Shell**.
-1. Na sessão do PowerShell no painel do Cloud Shell, execute o seguinte para listar todas as VMs do Azure criadas nesse laboratório:
+1. Na sessão do PowerShell no painel do Cloud Shell, execute o seguinte para listar todas as VMs do Azure criadas neste laboratório:
 
    ```powershell
    Get-AzVM -ResourceGroup 'az140-21-RG'
    ```
 
-1. Na sessão do PowerShell no painel do Cloud Shell, execute o seguinte para parar e desalocar todas as VMs do Azure criadas nesse laboratório:
+1. Na sessão do PowerShell no painel do Cloud Shell, execute o seguinte para parar e desalocar todas as VMs do Azure criadas neste laboratório:
 
    ```powershell
    Get-AzVM -ResourceGroup 'az140-21-RG' | Stop-AzVM -NoWait -Force
