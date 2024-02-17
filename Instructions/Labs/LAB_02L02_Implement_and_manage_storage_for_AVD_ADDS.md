@@ -144,7 +144,7 @@ As principais tarefas desse exercício são as seguintes:
    AzureStorageSid   : S-1-5-21-1102940778-2483248400-1820931179-2109
    ```
 
-1. Na sessão da Área de Trabalho Remota para **az140-dc-vm11**, alterne para a janela do Microsoft Edge exibindo o portal do Azure, na folha que exibe a conta de armazenamento, selecione **Compartilhamento de arquivo** e verifique se a configuração do **Active Directory** está **Configurada**.
+1. Na sessão da Área de Trabalho Remota para **az140-dc-vm11**, alterne para a janela do Microsoft Edge exibindo o portal do Azure, na folha que exibe a conta de armazenamento, selecione **Compartilhamento de arquivo** e verifique se a configuração do **acesso baseado em identidade** está **Configurada**.
 
    >**Observação**: Talvez seja necessário atualizar a página do navegador para que a alteração seja refletida no portal do Azure.
 

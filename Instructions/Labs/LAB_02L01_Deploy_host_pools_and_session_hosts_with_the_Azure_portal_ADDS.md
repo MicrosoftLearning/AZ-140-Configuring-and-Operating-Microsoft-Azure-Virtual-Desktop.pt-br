@@ -264,7 +264,7 @@ As principais tarefas desse exercício são as seguintes:
    |Nome do grupo de aplicativos|**az140-21-hp1-Utilities-RAG**|
 
 1. Na guia **Aplicativos** da folha **Criar um grupo de aplicativos**, selecione **+ Adicionar aplicativos**.
-1. Na folha **Adicionar aplicativo**, especifique as seguintes configurações e selecione **Salvar**:
+1. Na folha **Adicionar aplicativo**, use as guias **Básico** e **Ícone** para especificar as seguintes configurações e selecione **Salvar**:
 
    |Configuração|Valor|
    |---|---|
