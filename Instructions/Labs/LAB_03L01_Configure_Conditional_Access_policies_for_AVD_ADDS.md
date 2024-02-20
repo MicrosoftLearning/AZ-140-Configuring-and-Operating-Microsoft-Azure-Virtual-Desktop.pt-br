@@ -35,6 +35,10 @@ Depois de realizar este laboratório, você será capaz de:
 
 ## Instruções
 
+>**Importante**: A Microsoft renomeou o **Azure Active Directory** (**Azure AD**) como **Microsoft Entra ID**. Para obter detalhes sobre esta alteração, confira [Novo nome do Azure Active Directory](https://learn.microsoft.com/en-us/entra/fundamentals/new-name). Este é um esforço contínuo, portanto, você ainda pode encontrar instâncias com uma incompatibilidade entre a instrução do laboratório e os elementos da interface à medida que você avança em exercícios individuais. Leve isso em consideração (especialmente neste laboratório, o **Microsoft Entra Connect** designa o novo nome do **Azure Active Directory Connect**, e o termo **Azure Active Directory** ainda é usado ao configurar o ponto de conexão de serviço na tarefa 4 do exercício 1).
+
+>**Importante**: Ativar uma avaliação gratuita do Microsoft Entra ID P2 requer o fornecimento de informações de cartão de crédito. Por esse motivo, este exercício é totalmente opcional. Em vez disso, os instrutores de curso podem optar por demonstrar essa funcionalidade aos alunos.
+
 ### Exercício 1: Preparar-se para o Acesso Condicional baseado no Microsoft Entra para Área de Trabalho Virtual do Azure
 
 As principais tarefas desse exercício são as seguintes:
@@ -49,7 +53,10 @@ As principais tarefas desse exercício são as seguintes:
 
 >**Observação**: o licenciamento P1 ou P2 Premium do Microsoft Entra é necessário para implementar o Acesso Condicional do Microsoft Entra. Você usará uma avaliação de 30 dias para esse laboratório.
 
-1. No seu computador de laboratório, inicie um navegador da Web, navegue até o [portal do Azure](https://portal.azure.com) e entre fornecendo credenciais de uma conta de usuário com a função Proprietário na assinatura que você usará nesse laboratório e a função de Administrador Global no locatário do Microsoft Entra associado à assinatura do Azure.
+1. No seu computador de laboratório, inicie um navegador da Web, navegue até o [portal do Azure](https://portal.azure.com) e entre fornecendo as credenciais do Microsoft Entra de uma conta de usuário com a função Proprietário na assinatura que você usará neste laboratório e a função Administrador Global no locatário do Microsoft Entra associado à assinatura.
+
+    >**Importante**: Certifique-se de que você esteja usando uma conta corporativa ou de estudante, **não** uma conta Microsoft.
+
 1. No portal do Azure, pesquise e selecione **Azure Active Directory** para navegar até o locatário do Microsoft Entra associado à assinatura do Azure que você está usando para este laboratório.
 1. Na folha do Azure Active Directory, na barra de menus vertical no lado esquerdo, na seção **Gerenciar**, clique em **Usuários**. 
 1. Na folha **Usuários | Todos os usuários (versão prévia)**, selecione **aduser5**.
@@ -69,8 +76,7 @@ As principais tarefas desse exercício são as seguintes:
 1. No portal do Azure, navegue de volta até a folha **Visão geral** do locatário do Microsoft Entra e, na barra de menus vertical no lado esquerdo, na seção **Gerenciar**, clique em **Licenças**.
 1. Na folha **Licenças\| Visão Geral**, na barra de menus vertical no lado esquerdo, na seção **Gerenciar**, clique em **Todos os produtos **.
 1. Na folha **Licenças \| Todos os produtos**, na barra de ferramentas, clique em **+ Tentar/Comprar**.
-1. Na folha **Ativar**, clique em **Avaliação gratuita** na seção **ENTERPRISE MOBILITY + SECURITY E5** e clique em **Ativar**. 
-1. Na folha ** Licenças\| Visão Geral**, atualize a janela do navegador para verificar se a ativação foi bem-sucedida. 
+1. Na folha **Ativar**, clique em **Avaliação gratuita** na seção **MICROSOFT ENTRA ID P2**, clique em **Ativar** e siga os prompts para concluir o processo de ativação.
 1. Na folha **Licenças – Todos os produtos**, selecione a entrada **Enterprise Mobility + Security E5**. 
 1. Na folha **Enterprise Mobility + Security E5**, na barra de ferramentas, clique em **+ Atribuir**.
 1. Na folha **Atribuir licença**, clique em **Adicionar usuários e grupos**, na folha **Adicionar usuários e grupos**, selecione **aduser5** e sua conta de usuário e clique em **Selecionar**.
@@ -181,7 +187,7 @@ As principais tarefas desse exercício são as seguintes:
 
    - Na caixa de texto **Nome**, digite **az140-31-wvdpolicy1**
    - Na seção **Atribuições**, selecione a opção **Usuários ou identidades de carga de trabalho**, na lista suspensa **A quê essa política se aplica?**. Verifique se a opção **Usuários e grupos** está selecionada. Na seção **Selecionar Usuários e grupos**, selecione a caixa de seleção **Usuários e grupos**. Na folha **Selecionar**, clique em **aduser5** e clique em **Selecionar**.
-   - Na seção **Atribuições**, clique em ** Aplicativos de nuvem ou ações**, verifique se, na alternância **Selecionar a quê essa política se aplica**, a opção **Aplicativos de nuvem** está selecionada. Clique na opção **Selecionar aplicativos**, na folha **Selecionar**. Na caixa de texto **Pesquisar**, digite **9cdead84-a844-4324-93f2-b2e6bb768d07**. Na listagem de resultados, selecione a caixa de seleção ao lado da entrada **Área de Trabalho Virtual do Azure**. Na caixa de texto **Pesquisar**, digite **a4a365df-50f1-4397-bc59-1a1564b8bb9c**. Marque a caixa de seleção ao lado da entrada **Área de Trabalho Remota da Microsoft** e clique em ** Selecionar**. 
+   - Na seção **Atribuições**, clique em **Aplicativos ou ações de nuvem** e certifique-se de que, na caixa de texto **Selecionar a que esta política se aplica**, a opção **Aplicativos de nuvem** esteja selecionada; clique na opção **Selecionar aplicativos** e, na folha **Selecionar**, na caixa de texto **Pesquisar**, insira **Área de Trabalho Virtual do Azure**; na listagem de resultados, selecione a caixa de seleção ao lado da entrada da **Área de Trabalho Virtual do Azure** e, na caixa de texto **Pesquisar**, insira **Área de Trabalho Remota da Microsoft**, marque a caixa de seleção ao lado da entrada da **Área de Trabalho Remota da Microsoft** e clique em **Selecionar**. 
 
    > **Observação**: a Área de Trabalho Virtual do Azure (ID do aplicativo 9cdead84-a844-4324-93f2-b2e6bb768d07) é usada quando o usuário assina um feed e se autentica no Gateway de Área de Trabalho Virtual do Azure durante uma conexão. A Área de Trabalho Remota da Microsoft (ID do aplicativo a4a365df-50f1-4397-bc59-1a1564b8bb9c) é usada quando o usuário se autentica no host da sessão quando o logon único está habilitado.
 

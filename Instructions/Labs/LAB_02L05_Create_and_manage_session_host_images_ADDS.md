@@ -295,12 +295,14 @@ As principais tarefas desse exercício são as seguintes:
    |Adicionar máquinas virtuais do Azure|**Sim**|
    |Grupo de recursos|**O padrão é o mesmo que o pool de hosts**|
    |Prefixo do nome|**az140-25-p4**|
+   |Tipo de máquina virtual|**Máquina Virtual do Azure**|
    |Localização da máquina virtual|o nome da região do Azure na qual você implantou recursos no primeiro exercício deste laboratório|
    |Opções de disponibilidade|**Nenhuma redundância de infraestrutura necessária**|
+   |Tipo de segurança|**Standard**|
    
 1. Na guia **Máquinas virtuais** da folha **Criar um pool de host**, diretamente abaixo da lista suspensa **Imagem**, clique no link **Ver todas as imagens**.
 1. Na folha **Selecionar uma imagem**, em **Outros Itens**, clique em **Imagens Compartilhadas** e, na lista de imagens compartilhadas, selecione **az140-25-host-image**. 
-1. Na guia **Máquinas Virtuais** da folha **Criar um pool de hosts**, especifique as seguintes configurações e selecione **Avançar: Workspace >**
+1. Na guia **Máquinas Virtuais** da folha **Criar um pool de hosts**, especifique as seguintes configurações e selecione **Avançar: Workspace >**:
 
    |Configuração|Valor|
    |---|---|

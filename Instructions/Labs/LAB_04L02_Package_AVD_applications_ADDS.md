@@ -38,6 +38,8 @@ Depois de realizar este laboratório, você será capaz de:
 
 ## Instruções
 
+>**Importante**: A Microsoft renomeou o **Azure Active Directory** (**Azure AD**) para **Microsoft Entra ID**. Para obter detalhes sobre essa alteração, confira [Novo nome do Azure Active Directory](https://learn.microsoft.com/en-us/entra/fundamentals/new-name). Esse é um esforço contínuo, portanto, você ainda poderá encontrar casos em que há uma incompatibilidade entre as instruções do laboratório e os elementos da interface à medida que avança em exercícios individuais. Leve isso em consideração (em particular, neste laboratório, o **Microsoft Entra Connect** designa o novo nome do **Microsoft Azure Active Directory Connect**).
+
 ### Exercício 1: Preparar e criar pacotes de aplicativo MSIX
 
 As principais tarefas deste exercício são as seguintes:
@@ -464,18 +466,17 @@ As principais tarefas deste exercício são as seguintes:
 1. Na folha **Grupos de Aplicativos \| da Área de Trabalho Virtual do Azure**, selecione a entrada do grupo de aplicativos **az140-21-hp1-Utilities-RAG**.
 1. Na folha **az140-21-hp1-Utilities-RAG**, no menu vertical no lado esquerdo, na seção **Gerenciar**, selecione **Aplicativos**. 
 1. Na folha **az140-21-hp1-Utilities-RA\| Aplicativos**, clique em **+ Adicionar**.
-1. Na folha **Adicionar aplicativo**, especifique as seguintes configurações e selecione **Salvar**:
+1. Na folha **Adicionar aplicativo**, nas guias **Básico** e **Ícone**, especifique as seguintes configurações e selecione **Salvar**:
 
    |Configuração|Valor|
    |---|---|
-   |Origem do aplicativo|**Pacote MSIX**|
-   |Pacote MSIX|o nome que representa o pacote incluído na imagem|
-   |Aplicativo MSIX|**XMLNOTEPAD**|
-   |Nome do aplicativo|**Bloco de notas XML**|
+   |Origem do aplicativo|**Anexar Aplicativo**|
+   |Pacote|o nome que representa o pacote incluído na imagem|
+   |Aplicativo|**XMLNOTEPAD**|
+   |Identificador de aplicativo|**Bloco de notas XML**|
    |Nome de exibição|**Bloco de notas XML**|
    |Descrição|**Bloco de notas XML**|
-   |Caminho do ícone|**C: \\Arquivos de Programas\\ WindowsApps\\XmlNotepad_2.8.0.0_x64___4vm7ty4fw38e8\\VFS\\ProgramFilesX86\\LovettSoftware\\XmlNotepad\\XmlNotepad.exe**|
-   |Índice do ícone|**0**|
+   |Origem do ícone|**Default**|
 
 1. Navegue de volta para a folha **Grupos de aplicativos da \|Área de Trabalho Virtual do Azure** e selecione a entrada do grupo de aplicativos **az140-21-hp1-DAG**.
 1. Na folha **az140-21-hp1-DAG**, no menu vertical no lado esquerdo, na seção **Gerenciar**, selecione **Aplicativos**. 
