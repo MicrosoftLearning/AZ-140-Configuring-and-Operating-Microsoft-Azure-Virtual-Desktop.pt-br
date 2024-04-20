@@ -1,7 +1,7 @@
 ---
 lab:
   title: 'Laboratório: Laboratório: preparar para a implantação da Área de Trabalho Virtual do Azure (AD DS)'
-  module: 'Module 1: Plan a AVD Architecture'
+  module: 'Module 1: Plan an AVD Architecture'
 ---
 
 # Laboratório: preparar para a implantação da Área de Trabalho Virtual do Azure (AD DS)
