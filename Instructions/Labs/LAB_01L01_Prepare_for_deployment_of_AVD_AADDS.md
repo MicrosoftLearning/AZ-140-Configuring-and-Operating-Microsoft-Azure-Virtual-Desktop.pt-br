@@ -112,7 +112,7 @@ As principais tarefas desse exercício são as seguintes:
 1. No seu computador de laboratório, inicie um navegador da Web, navegue até o [portal do Azure](https://portal.azure.com) e entre fornecendo credenciais de uma conta de usuário com a função Proprietário na assinatura que você usará nesse laboratório e a função de Administrador Global no locatário do Microsoft Entra associado à assinatura do Azure.
 1. No navegador da Web que exibe o portal do Azure, navegue até a folha **Visão geral** do locatário do Microsoft Entra e, no menu vertical à esquerda, na seção **Gerenciar**, clique em **Propriedades**.
 1. Na folha **Propriedades** do locatário do Microsoft Entra, na parte inferior da folha, selecione o link **Gerenciar Padrões de Segurança**.
-1. Na folha **Habilitar Padrões de Segurança**, se necessário, selecione **Não**, marque a caixa de seleção **Minha organização está usando Acesso Condicional** e selecione **Salvar**.
+1. Na folha **Habilitar Segurança padrão**, se necessário, selecione **Não**, selecione a caixa de seleção **Minha organização está usando o Acesso Condicional** e selecione **Salvar**.
 1. No portal do Azure, abra o painel do **Cloud Shell** selecionando no ícone da barra de ferramentas diretamente à direita da caixa de texto de pesquisa.
 1. Se for solicitado que você selecione **Bash** ou **PowerShell**, selecione **PowerShell**. 
 
