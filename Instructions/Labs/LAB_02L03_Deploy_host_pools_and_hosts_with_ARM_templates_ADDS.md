@@ -51,7 +51,7 @@ As principais tarefas desse exercício são as seguintes:
 
 1. No seu computador de laboratório, inicie um navegador da Web, navegue até o [portal do Azure](https://portal.azure.com) e entre fornecendo credenciais de uma conta de usuário com a função Proprietário na assinatura que você usará nesse laboratório.
 1. No portal do Azure, pesquise e selecione **Máquinas Virtuais** e, na folha **Máquinas Virtuais**, selecione **az140-dc-vm11**.
-1. Na folha **az140-dc-vm11**, selecione **Conectar**, no menu suspenso, selecione **Bastion**, na guia **Bastion** da folha **Conectar \|az140-dc-vm11**, selecione **Usar o Bastion**.
+1. Na folha **az140-dc-vm11**, selecione **Conectar**, no menu suspenso, selecione **Conectar via Bastion**.
 1. Quando solicitado, forneça as seguintes credenciais e selecione **Conectar**:
 
    |Configuração|Valor|
@@ -79,7 +79,7 @@ As principais tarefas desse exercício são as seguintes:
    (Get-ADUser -Filter "sAMAccountName -eq 'aduser8'").userPrincipalName
    ```
 
-   > **Observação**: Registre todos os valores de nome de entidade de usuário que você identificou. Você precisará deles adiante neste laboratório.
+   > **Observação**: Registre todos os valores de nome de entidade de usuário que você identificou **e** o nome diferenciado para a UO WVDInfra. Você precisará deles adiante neste laboratório.
 
 1. Na sessão do Bastion para **az140-cl-vm11**, no ISE do Windows Power Shell** Painel de script do ISE do Windows PowerShell**: execute o seguinte para calcular o tempo de expiração do token necessário para executar uma implantação baseada em modelo:
 
@@ -100,11 +100,12 @@ As principais tarefas desse exercício são as seguintes:
    |Nome|**hp2-Subnet**|
    |Intervalo de endereços da sub-rede|**10.0.2.0/24**|
 
-1. Na sessão do Bastion para **az140-dc-vm11**, no portal do Azure, use a caixa de texto **Pesquisar recursos, serviços e documentos** na parte superior da página do portal do Azure para pesquisar e navegar até **Grupos de segurança de rede** e, na folha **Grupos de Segurança de Rede**, selecione o grupo de segurança no grupo de recursos **az140-11-RG**.
+1. Na sessão do Bastion para **az140-dc-vm11**, no portal do Azure, use a caixa de texto **Pesquisar recursos, serviços e documentos** na parte superior da página do portal do Azure para pesquisar e navegar até **Grupos de Segurança de Rede** e, na folha **Grupos de Segurança de Rede**, selecione o único grupo de segurança de rede.
 1. Na folha do grupo de segurança de rede, no menu vertical à esquerda, na seção **Configurações**, clique em **Propriedades**.
 1. Na folha **Propriedades**, clique no ícone **Copiar para área de transferência** no lado direito da caixa de texto **ID do Recurso**. 
 
    > **Observação**: O valor deve ser semelhante ao formato `/subscriptions/de8279a3-0675-40e6-91e2-5c3728792cb5/resourceGroups/az140-11-RG/providers/Microsoft.Network/networkSecurityGroups/az140-cl-vm11-nsg`, embora a ID da assinatura seja diferente. Registre-o, pois você precisará dele na próxima tarefa.
+1. Agora você deve ter **seis** valores registrados. Um nome diferenciado, três nomes de entidade de usuário, um valor DateTime e a ID do recurso. Se você não tiver seis valores registrados, leia esta tarefa novamente **antes** de continuar. 
 
 #### Tarefa 2: Implantar um pool de hosts e hosts da Área de Trabalho Virtual do Azure usando um modelo do Azure Resource Manager
 
@@ -118,7 +119,7 @@ As principais tarefas desse exercício são as seguintes:
    |Configuração|Valor|
    |---|---|
    |Assinatura|o nome da assinatura do Azure que você está usando neste laboratório|
-   |Grupo de recursos|O nome de um novo grupo de recursos **az140-23-RG**|
+   |Grupo de recursos|criar um **novo** grupo de recursos chamado **az140-23-RG**|
    |Region|o nome da região do Azure na qual você implantou VMs do Azure que hospedam controladores de domínio do AD DS no laboratório **Preparar para a implantação da Área de Trabalho Virtual do Azure (AD DS)**|
    |Localidade|o nome da mesma região do Azure que o conjunto como o valor dos parâmetros de **Região**|
    |Localização do workspace|o nome da mesma região do Azure que o conjunto como o valor dos parâmetros de **Região**|
@@ -176,15 +177,13 @@ As principais tarefas desse exercício são as seguintes:
    |Grupo de recursos|**az140-23-RG**|
    |Token do hostpool|o valor do token gerado na tarefa anterior|
    |Local do hostpool|o nome da região do Azure na qual você implantou o hostpool anteriormente neste laboratório|
-   |Nome de Usuário da Conta do Administrador da VM|**aluno** Não usar@adatum.com|
-   |Senha da Conta do Administrador da VM|**Pa55w.rd1234**|
    |Local da VM|o nome da mesma região do Azure que a que foi definida como o valor dos parâmetros de **Local** do Hostpool|
    |Criar um grupo de segurança de rede|**false**|
    |ID do Grupo de Segurança de Rede|o valor do parâmetro resourceID do grupo de segurança de rede existente que você identificou na tarefa anterior|
 
 1. Na folha **Implantação personalizada**, selecione **Examinar + criar** e selecionar **Criar**.
 
-   > **Observação**: Aguarde a conclusão da implantação antes de prosseguir para a próxima tarefa. Isso pode levar cerca de cinco minutos.
+   > **Observação**: Aguarde a conclusão da implantação antes de prosseguir para a próxima tarefa. Isso pode levar cerca de 10 minutos.
 
 #### Tarefa 6: Verificar alterações no pool de host da Área de Trabalho Virtual do Azure
 
@@ -206,12 +205,12 @@ As principais tarefas desse exercício são as seguintes:
 1. Na folha **Grupos de aplicativos\| az140-23-hp2**, na lista de grupos de aplicativos, selecione **az140-23-hp2-DAG**.
 1. Na folha **az140-23-hp2-DAG**, no menu vertical à esquerda, selecione **Atribuições**. 
 1. Na folha **az140-23-hp2-DAG \| Atribuições**, selecione** + Adicionar **.
-1. Na folha **Selecionar usuários ou grupos de usuários do Microsoft Entra**, selecione **az140-wvd-personal** e clique em **Selecionar**.
+1. Na folha **Selecionar usuários ou grupos de usuários do Microsoft Entra**, selecione**Grupos** e selecione **az140-wvd-personal** e clique em **Selecionar**.
 
    > **Observação**: Agora vamos examinar a experiência de um usuário que se conecta ao pool de host da Área de Trabalho Virtual do Azure.
 
 1. No seu computador de laboratório, na janela do navegador que exibe o portal do Azure, pesquise e selecione **Máquinas Virtuais** e, na folha **Máquinas Virtuais**, selecione a entrada **az140-cl-vm11**.
-1. Na folha **az140-cl-vm11**, selecione **Conectar**, no menu suspenso, selecione **Bastion**, na guia **Bastion** da folha **az140-cl-vm11 \| Conectar**, selecione **Usar Bastion**.
+1. Na folha **az140-cl-vm11**, selecione **Conectar**, no menu suspenso, selecione **Conectar via Bastion**.
 1. Quando solicitado, forneça as seguintes credenciais e selecione **Conectar**:
 
    |Configuração|Valor|
@@ -224,10 +223,9 @@ As principais tarefas desse exercício são as seguintes:
 3. Na sessão Bastion para **az140-cl-vm11**, na janela Área de Trabalho Remota, na **página Vamos começar**, clique em **Assinar**.
 4. Na janela cliente da **Área de Trabalho Remota**, selecione **Assinar** e, quando solicitado, entre com as credenciais **aduser7** fornecendo seu userPrincipalName e a senha definida ao criar essa conta de usuário.
 
-   > **Observação**: como alternativa, na janela cliente da **Área de Trabalho Remota**, selecione **Assinar com a URL**, no painel **Assinar um Workspace**, na **URL de Email ou Workspace**, digite **https://rdweb.wvd.microsoft.com/api/arm/feeddiscovery**, selecione **Avançar**e, uma vez solicitado, entre com as credenciais **aduser7** (usando seu atributo userPrincipalName como o nome de usuário e a senha definida ao criar essa conta). 
+   > **Observação**: como alternativa, na janela cliente da **Área de Trabalho Remota**, selecione **Assinar com a URL**, no painel **Assinar um Workspace**, na **URL de Email ou Workspace**, digite **https://client.wvd.microsoft.com/api/arm/feeddiscovery**, selecione **Avançar**e, uma vez solicitado, entre com as credenciais **aduser7** (usando seu atributo userPrincipalName como o nome de usuário e a senha definida ao criar essa conta). 
 
 1. **Na página Área de Trabalho Remota**, clique duas vezes no ícone **SessionDesktop**, quando solicitado a inserir as credenciais, digite a mesma senha novamente, selecione a caixa de seleção **Lembrar-me** e clique em **OK**.
-1. Na janela **Permanecer conectado a todos os seus aplicativos** desmarque a caixa de seleção **Permitir que minha organização gerencie meu dispositivo** e selecione **Não, entrar somente nesse aplicativo**. 
 1. Verifique se o **aduser7** entrou com êxito por meio da Área de Trabalho Remota em um host.
 1. Na sessão da Área de Trabalho Remota para um dos hosts como **aduser7**, clique com o botão direito do mouse em **Iniciar**, no menu com o botão direito do mouse, selecione **Desligar ou sair** e, no menu em cascata, clique em **Sair**.
 
@@ -249,7 +247,6 @@ As principais tarefas desse exercício são as seguintes:
 1. Volte para a sessão do Bastion para **az140-cl-vm11**, na janela **Área de Trabalho Remota**, clique no ícone de reticências no canto superior direito, no menu suspenso, clique em **Cancelar assinatura** e, quando solicitado, clique em **Continuar**.
 1. Na sessão Bastion para **az140-cl-vm11**, na janela **Área de Trabalho Remota**, na página **Vamos começar**, clique em **Assinar**.
 1. Quando solicitado a entrar, no painel **Escolher uma conta**, clique em **Usar outra conta** e, quando solicitado, entre usando o nome principal do usuário da conta de usuário **aduser8** com a senha definida ao criar essa conta.
-1. Na janela **Permanecer conectado a todos os seus aplicativos** desmarque a caixa de seleção **Permitir que minha organização gerencie meu dispositivo** e selecione **Não, entrar somente nesse aplicativo**. 
 1. Na página **Área de Trabalho Remota**, clique duas vezes no ícone **SessionDesktop**, verifique se você recebeu uma mensagem de erro informando que **Não foi possível conectar porque não há recursos disponíveis no momento. Tente novamente mais tarde ou entre em contato com o suporte técnico para obter ajuda se isso continuar acontecendo** e clique em **OK**.
 
    > **Observação**: Isso é esperado, pois o pool de hosts está configurado para atribuição direta e não foi atribuído um host a **aduser8**.
@@ -257,6 +254,8 @@ As principais tarefas desse exercício são as seguintes:
 1. Alterne para o seu computador de laboratório, para o navegador da Web que exibe o portal do Azure e, na folha **Hosts de sessão\|az140-23-hp2**, selecione o link **(Atribuir)** na coluna **Usuário Atribuído** ao lado de um dos dois hosts não atribuídos restantes.
 1. Na opção **Atribuir um usuário**, selecione **aduser8**, clique em **Selecionar** e, quando solicitado a confirmar, clique em **OK**.
 1. Volte para a sessão do Bastion para **az140-cl-vm11**, na janela **Área de Trabalho Remota**, clique duas vezes no ícone **SessionDesktop**, quando for solicitada a senha, digite a senha definida ao criar essa conta de usuário, clique em **OK** e verifique se você consegue entrar com êxito no host atribuído.
+1. Na Área de Trabalho de Sessão para o host atribuído para **aduser8**, clique com o botão direito do mouse em **Iniciar**, no menu com o botão direito do mouse, selecione **Desligar ou sair** e, no menu em cascata, clique em **Sair**.
+1. Na sessão do Bastion para **az140-cl-vm11**, clique com o botão direito do mouse em **Iniciar**, no menu com o botão direito do mouse, selecione **Desligar ou sair** e, no menu em cascata, clique em **Sair**e clique em **Fechar**.
 
 ### Exercício 2: Parar e desalocar VMs do Azure provisionadas no laboratório
 

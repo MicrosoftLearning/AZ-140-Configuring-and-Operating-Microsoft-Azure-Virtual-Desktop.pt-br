@@ -40,7 +40,8 @@ Depois de realizar este laboratório, você será capaz de:
 As principais tarefas desse exercício são as seguintes:
 
 1. Preparar para dimensionar hosts de sessão da Área de Trabalho Virtual do Azure
-2. Criar um plano de dimensionamento para hosts de sessão da Área de Trabalho Virtual do Azure
+2. Configurar o diagnóstico para acompanhar o dimensionamento automático da Área de Trabalho Virtual do Azure
+3. Criar um plano de dimensionamento para hosts de sessão da Área de Trabalho Virtual do Azure
 
 #### Tarefa 1: Preparar para dimensionar hosts de sessão da Área de Trabalho Virtual do Azure
 
@@ -65,22 +66,59 @@ As principais tarefas desse exercício são as seguintes:
 1. No portal do Azure, pesquise e selecione **Assinaturas** e, na lista de assinaturas, selecione a que contém os recursos da Área de Trabalho Virtual do Azure. 
 1. Na página de assinatura, selecione **Controle de acesso (IAM).**
 1. Na página **Controle de acesso (IAM)**, na barra de ferramentas, selecione o botão **+ Adicionar** e, em seguida, selecione **Adicionar atribuição de função** no menu suspenso.
-1. Na guia **Função** do assistente **Adicionar atribuição de função**, pesquise e selecione a função **Colaborador do Power On Off de Virtualização da Área de Trabalho** e clique em **Avançar**.
-1. Na guia **Membros** do assistente **Adicionar atribuição de função**, selecione **+ Selecionar membros**, pesquise e selecione**Área de Trabalho Virtual do Azure** ou **Área de Trabalho Virtual do Windows**, clique em ** Selecionar** e clique em **Avançar**.
+1. Na folha **Adicionar atribuição** de função, na guia **Função**, especifique as seguintes configurações e selecione **Avançar**:
+
+   |Configuração|Valor|
+   |---|---|
+   |Funções de trabalho|**Colaborador do Desktop Virtualization Power On Off**|
+
+1. Na folha **Adicionar atribuição** de função, na **guia Membros**, clique **em + Selecionar membros**, especifique as configurações a seguir e clique em **Selecionar**. 
+
+   |Configuração|Valor|
+   |---|---|
+   |Selecionar|**Área de Trabalho Virtual do Azure** ou **Área de Trabalho Virtual do Windows**|
+
+1. Na folha **Adicionar atribuição de função**, selecione **Examinar + atribuir**
 
    >**Observação**: o valor depende de quando o provedor de recursos **Microsoft.DesktopVirtualization** foi registrado pela primeira vez em seu locatário do Azure.
 
 1. Na guia **Revisão + atribuição**, selecione **Examinar + atribuir**.
 
-#### Tarefa 2: Criar um plano de dimensionamento para hosts de sessão da Área de Trabalho Virtual do Azure
+#### Tarefa 2: Configurar o diagnóstico para acompanhar o dimensionamento automático da Área de Trabalho Virtual do Azure
+
+1. No computador do laboratório, na janela do navegador da Web que exibe o portal do Azure, abra a sessão do shell do **PowerShell** no painel do **Cloud Shell**.
+
+   >**Observação**: Você usará uma conta de Armazenamento do Azure para armazenar eventos de dimensionamento automático. Você pode criá-lo diretamente no portal do Azure ou usar o Azure PowerShell, conforme ilustrado nesta tarefa.
+
+1. Na sessão do PowerShell no painel do Cloud Shell, execute os seguintes comandos para criar uma conta de Armazenamento do Azure:
+
+   ```powershell
+   $resourceGroupName = 'az140-51-RG'
+   $location = (Get-AzResourceGroup -ResourceGroupName 'az140-11-RG').Location
+   New-AzResourceGroup -Location $location -Name $resourceGroupName
+   $suffix = Get-Random
+   $storageAccountName = "az140st51$suffix"
+   New-AzStorageAccount -Location $location -Name $storageAccountName -ResourceGroupName $resourceGroupName -SkuName Standard_LRS
+   ```
+
+   >**Observação**: Aguarde até que a conta de armazenamento seja provisionada.
+
+1. Na janela do navegador que exibe o portal do Azure, feche o painel do Cloud Shell.
+1. No computador do laboratório, no navegador que exibe o portal do Azure, navegue até a página do pool de hosts **az140-21-hp1**.
+1. Na página** az140-21-hp1**, selecione **Configurações de diagnóstico** e, em seguida, selecione **+ Adicionar configuração de diagnóstico**.
+1. Na página **Configuração de diagnóstico**, na caixa de texto **Nome da configuração de diagnóstico**, insira **az140-51-scaling-plan-diagnostics** e, na seção **Grupos de categorias**, selecione **logs de dimensionamento automático para pools de hosts em pool**. 
+1. Na mesma página, na seção **Detalhes de destino**, selecione**Arquivar em uma conta de armazenamento** e, na lista suspensa **Conta de armazenamento**, selecione o nome da conta de armazenamento que começa com o prefixo **az140st51**. 
+1. Selecione **Salvar**.
+
+#### Tarefa 3: Criar um plano de dimensionamento para hosts de sessão da Área de Trabalho Virtual do Azure
 
 1. No computador do laboratório, no navegador que exibe o portal do Azure, pesquise e selecione a **Área de Trabalho Virtual do Azure**. 
 1. Na página **Área de Trabalho Virtual do Azure**, selecione **Dimensionamento de Planos** e, em seguida, selecione **+ Criar**.
-1. Na guia **Noções básicas** do assistente **Criar um plano de dimensionamento**, especifique as informações a seguir e selecione **Próximos Agendamentos >** (deixe as outras com seus valores padrão):
+1. Na guia **Noções Básicas** do assistente **Criar um plano de dimensionamento**, especifique as seguintes informações e selecione **Avançar: Agenda >** (deixe outras pessoas com seus valores padrão):
 
    |Configuração|Valor|
    |---|---|
-   |Grupo de recursos|o nome **az140-51-RG** de um novo grupo de recursos|
+   |Grupo de recursos|**az140-51-RG**|
    |Nome|**az140-51-scaling-plan**|
    |Localidade|a mesma região do Azure na qual você implantou os hosts de sessão nos laboratórios anteriores|
    |Nome amigável|**plano de dimensionamento az140-51**|
@@ -154,35 +192,10 @@ As principais tarefas desse exercício são as seguintes:
 
 As principais tarefas desse exercício são as seguintes:
 
-1. Configurar o diagnóstico para acompanhar o dimensionamento automático da Área de Trabalho Virtual do Azure
 1. Verificar o dimensionamento automático de hosts de sessão da Área de Trabalho Virtual do Azure
 
-#### Tarefa 1: Configurar o diagnóstico para acompanhar o dimensionamento automático da Área de Trabalho Virtual do Azure
 
-1. No computador do laboratório, na janela do navegador da Web que exibe o portal do Azure, abra a sessão do shell do **PowerShell** no painel do **Cloud Shell**.
-
-   >**Observação**: Você usará uma conta de Armazenamento do Azure para armazenar eventos de dimensionamento automático. Você pode criá-lo diretamente no portal do Azure ou usar o Azure PowerShell, conforme ilustrado nesta tarefa.
-
-1. Na sessão do PowerShell no painel do Cloud Shell, execute os seguintes comandos para criar uma conta de Armazenamento do Azure:
-
-   ```powershell
-   $resourceGroupName = 'az140-51-RG'
-   $location = (Get-AzResourceGroup -ResourceGroupName $resourceGroupName).Location
-   $suffix = Get-Random
-   $storageAccountName = "az140st51$suffix"
-   New-AzStorageAccount -Location $location -Name $storageAccountName -ResourceGroupName $resourceGroupName -SkuName Standard_LRS
-   ```
-
-   >**Observação**: Aguarde até que a conta de armazenamento seja provisionada.
-
-1. Na janela do navegador que exibe o portal do Azure, feche o painel do Cloud Shell.
-1. No computador do laboratório, no navegador que exibe o portal do Azure, navegue até a página do plano de dimensionamento criado no exercício anterior.
-1. Na página **az140-51-scaling-plan**, selecione **Configurações de diagnóstico** e, em seguida, selecione **+ Adicionar configuração de diagnóstico**.
-1. Na página **Configuração de diagnóstico**, na caixa de texto **Nome da configuração de diagnóstico**, digite **az140-51-scaling-plan-diagnostics** e, na seção **Grupos de categorias,** selecione**allLogs **. 
-1. Na mesma página, na seção **Detalhes de destino**, selecione**Arquivar em uma conta de armazenamento** e, na lista suspensa **Conta de armazenamento**, selecione o nome da conta de armazenamento que começa com o prefixo **az140st51**. 
-1. Selecione **Salvar**.
-
-#### Tarefa 2: Verificar o dimensionamento automático de hosts de sessão da Área de Trabalho Virtual do Azure
+#### Tarefa 1: Verificar o dimensionamento automático de hosts de sessão da Área de Trabalho Virtual do Azure
 
 1. No computador do laboratório, na janela do navegador da Web que exibe o portal do Azure, abra a sessão do shell do **PowerShell** no painel do **Cloud Shell**.
 1. Na sessão do PowerShell no painel do Cloud Shell, execute o seguinte comando para iniciar as VMs do Azure host da sessão da Área de Trabalho Virtual do Azure que você usará nesse laboratório:
@@ -197,18 +210,18 @@ As principais tarefas desse exercício são as seguintes:
 1. Na página **az140-21-hp1**, selecione **Hosts de sessão**.
 1. Aguarde até que pelo menos um host de sessão esteja listado com o status **Desligar**.
 
-   >**Observação**: Talvez seja necessário atualizar a página para atualizar o status dos hosts de sessão.
+   > **Observação**: Talvez seja necessário atualizar a página para atualizar o status dos hosts de sessão.
 
-   >**Observação**: Se todos os hosts de sessão permanecerem disponíveis, navegue de volta para a página **az140-51-scaling-plan** e reduza o valor da configuração **porcentagem mínima de hosts (%) ** ** Desacelerar**.
+   > **Observação**: Se todos os hosts de sessão permanecerem disponíveis após 15 minutos, navegue de volta para a página **az140-51-scaling-plan** e reduza o valor da **porcentagem mínima de hosts (%)** Configuração **Redução de rampa**.
 
-   >**Observação**: Depois que o status de um ou mais hosts de sessão for alterado, os logs de dimensionamento automático deverão estar disponíveis na conta de Armazenamento do Azure. 
+   > **Observação**: Depois que o status de um ou mais hosts de sessão for alterado, os logs de dimensionamento automático deverão estar disponíveis na conta de Armazenamento do Azure. 
 
 1. No portal do Azure, pesquise e selecione **Contas de armazenamento** e, na página **Contas de armazenamento**, selecione a entrada que representa a conta de armazenamento criada anteriormente neste exercício, cujo nome começa com o prefixo **az140st51**.
 1. Na página Conta de armazenamento, selecione **Contêineres**.
-1. Na lista de contêineres, selecione **insights-logs-autoscale**.
-1. Na página **insights-logs-autoscale**, navegue pela hierarquia de pastas até chegar à entrada que representa um blob formatado em JSON armazenado no contêiner.
+1. Na lista de contêineres, selecione **insights-logs-autoscaleevaluationpooled**.
+1. Na página **insights-logs-autoscaleevaluationpooled**, navegue pela hierarquia de pastas até chegar à entrada que representa um blob formatado em JSON armazenado no contêiner.
 1. Selecione a entrada de blob, selecione o ícone de reticências na extrema direita da página e, no menu suspenso, selecione **Baixar**.
-1. Em seu computador de laboratório, abra o blob baixado em um editor de texto de sua escolha e examine seu conteúdo. Você deve ser capaz de encontrar referências a eventos de dimensionamento automático. 
+1. Em seu computador de laboratório, abra o blob baixado em um editor de texto de sua escolha e examine seu conteúdo. Você deve ser capaz de encontrar referências a eventos de dimensionamento automático e, nesse caso, podemos procurar por "desalocados" para facilitar a identificação.
 
    >**Observação**: aqui está um conteúdo de blob de exemplo que inclui referências a eventos de dimensionamento automático:
 
@@ -219,7 +232,7 @@ As principais tarefas desse exercício são as seguintes:
    time "2023-03-26T19:35:46.0074598Z"
    resourceId   "/SUBSCRIPTIONS/AAAAAAAE-0000-1111-2222-333333333333/RESOURCEGROUPS/AZ140-51-RG/PROVIDERS/MICROSOFT.DESKTOPVIRTUALIZATION/SCALINGPLANS/AZ140-51-SCALING-PLAN"
    operationName    "ScalingEvaluationSummary"
-   category "Autoscale"
+   category "AutoscaleEvaluationPooled"
    resultType   "Succeeded"
    level    "Informational"
    correlationId    "ddd3333d-90c2-478c-ac98-b026d29e24d5"
