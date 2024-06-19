@@ -97,7 +97,20 @@ As principais tarefas desse exercício são as seguintes:
    Get-ChildItem -Path C:\Allfiles\Labs\02 -File -Recurse | Unblock-File
    ```
 
-1. Na sessão do Bastion para **az140-dc-vm11**, do **Administrador: ISE do Windows PowerShell**, execute o seguinte para definir as variáveis necessárias para executar o script subsequente:
+1. Do **Administrador: Console do ISE do Windows PowerShell**: execute o seguinte para entrar em sua assinatura do Azure:
+
+   ```powershell
+   Connect-AzAccount
+   ```
+
+1. Quando solicitado, forneça as credenciais de uma conta de usuário Entra ID com a função Proprietário na assinatura que você está usando nesse laboratório.
+1. Do **Administrador: Console ISE do Windows PowerShell**, execute o seguinte para desabilitar o Gerenciador de contas do Windows:
+
+   ```powershell
+   Update-AzConfig -EnableLoginByWam $false
+   ```
+   
+1. Do **Administrador: ISE do Windows PowerShell**, execute o seguinte para definir as variáveis necessárias para executar o script subsequente:
 
    ```powershell
    $subscriptionId = (Get-AzContext).Subscription.Id
@@ -105,7 +118,7 @@ As principais tarefas desse exercício são as seguintes:
    $storageAccountName = (Get-AzStorageAccount -ResourceGroupName $resourceGroupName)[0].StorageAccountName
    ```
 
-1. Na sessão do Bastion para **az140-dc-vm11**, do **Administrador: ISE do Windows PowerShell**, execute o seguinte para criar um objeto de computador do AD DS que representa a conta de Armazenamento do Azure criada anteriormente nesta tarefa, usada para implementar sua autenticação do AD DS:
+1. Do **Administrador: ISE do Windows PowerShell**, execute o seguinte para criar um objeto de computador do AD DS que representa a conta de Armazenamento do Azure criada anteriormente nesta tarefa, usada para implementar sua autenticação do AD DS:
 
    >**Observação**: Caso receba um erro ao executar esse bloco de script, verifique se você está no mesmo diretório que o script do CopyToPSPath.ps1. Dependendo de como os arquivos foram extraídos anteriormente neste laboratório, eles podem estar em uma subpasta chamada AzFilesHybrid. No contexto do PowerShell, altere os diretórios para a pasta usando **cd AzFilesHybrid**.
 
@@ -120,7 +133,7 @@ As principais tarefas desse exercício são as seguintes:
       -OrganizationalUnitDistinguishedName 'OU=WVDInfra,DC=adatum,DC=com'
    ```
 
-1. Na sessão do Bastion para **az140-dc-vm11**, do **Administrador: ISE do Windows PowerShell**, execute o seguinte para verificar se a autenticação do AD DS está habilitada na conta de Armazenamento do Microsoft Azure:
+1. Do **Administrador: ISE do Windows PowerShell**, execute o seguinte para verificar se a autenticação do AD DS está habilitada na conta de Armazenamento do Microsoft Azure:
 
    ```powershell
    $storageaccount = Get-AzStorageAccount -ResourceGroupName $resourceGroupName -Name $storageAccountName
