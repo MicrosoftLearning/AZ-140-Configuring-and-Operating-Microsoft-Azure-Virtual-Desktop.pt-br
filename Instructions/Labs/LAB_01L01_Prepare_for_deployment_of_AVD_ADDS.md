@@ -321,13 +321,19 @@ As principais tarefas deste exercício são as seguintes:
 
    > **Observação**: Talvez seja necessário aguardar de 3 a 5 minutos antes que qualquer saída da instalação do módulo Az seja exibida. Talvez você também precise aguardar mais 5 minutos **após** a interrupção da saída. Este comportamento é esperado.
 
+1. Do **Administrador: Console ISE do Windows PowerShell**, execute o seguinte para desabilitar o Gerenciador de contas do Windows:
+
+   ```powershell
+   Update-AzConfig -EnableLoginByWam $false
+   ```
+
 1. Do **Administrador: Console do ISE do Windows PowerShell**: execute o seguinte para entrar em sua assinatura do Azure:
 
    ```powershell
    Connect-AzAccount
    ```
 
-1. Quando solicitado, forneça as credenciais da conta de usuário com a função Proprietário na assinatura que você está usando neste laboratório.
+1. Quando solicitado, forneça as credenciais de uma conta de usuário Entra ID com a função Proprietário na assinatura que você está usando nesse laboratório.
 1. A partir do **Administrador: Console do ISE do Windows PowerShell**: execute o seguinte para recuperar a propriedade de ID do locatário do Microsoft Entra associado à sua assinatura do Azure:
 
    ```powershell

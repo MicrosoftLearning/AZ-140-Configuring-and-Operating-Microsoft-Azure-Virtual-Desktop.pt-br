@@ -97,19 +97,19 @@ As principais tarefas desse exercício são as seguintes:
    Get-ChildItem -Path C:\Allfiles\Labs\02 -File -Recurse | Unblock-File
    ```
 
+1. Do **Administrador: Console ISE do Windows PowerShell**, execute o seguinte para desabilitar o Gerenciador de contas do Windows:
+
+   ```powershell
+   Update-AzConfig -EnableLoginByWam $false
+   ```
+
 1. Do **Administrador: Console do ISE do Windows PowerShell**: execute o seguinte para entrar em sua assinatura do Azure:
 
    ```powershell
    Connect-AzAccount
    ```
 
-1. Quando solicitado, forneça as credenciais de uma conta de usuário Entra ID com a função Proprietário na assinatura que você está usando nesse laboratório.
-1. Do **Administrador: Console ISE do Windows PowerShell**, execute o seguinte para desabilitar o Gerenciador de contas do Windows:
-
-   ```powershell
-   Update-AzConfig -EnableLoginByWam $false
-   ```
-   
+1. Quando solicitado, forneça as credenciais de uma conta de usuário Entra ID com a função Proprietário na assinatura que você está usando nesse laboratório. 
 1. Do **Administrador: ISE do Windows PowerShell**, execute o seguinte para definir as variáveis necessárias para executar o script subsequente:
 
    ```powershell
