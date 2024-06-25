@@ -82,7 +82,13 @@ As principais tarefas deste exercício são as seguintes:
 
    > **Observação**: Talvez seja necessário aguardar de 3 a 5 minutos antes que qualquer saída da instalação do módulo Az seja exibida. Talvez você também precise aguardar mais 5 minutos **após** a interrupção da saída. Este comportamento é esperado.
 
-1. A partir do **Administrador: ISE do Windows PowerShell**, execute o seguinte para entrar em sua assinatura do Azure:
+1. Do **Administrador: Console ISE do Windows PowerShell**, execute o seguinte para desabilitar o Gerenciador de contas do Windows:
+
+   ```powershell
+   Update-AzConfig -EnableLoginByWam $false
+   ```
+
+1. Do **Administrador: Console do ISE do Windows PowerShell**: execute o seguinte para entrar em sua assinatura do Azure:
 
    ```powershell
    Connect-AzAccount
