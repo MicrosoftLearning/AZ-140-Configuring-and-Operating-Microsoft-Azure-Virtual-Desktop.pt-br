@@ -95,9 +95,9 @@ As principais tarefas desse exercício são as seguintes:
    |Prefixo do nome|**az140-21-p1**|
    |Localização da máquina virtual|o nome da região do Azure na qual você implantou recursos no primeiro exercício deste laboratório|
    |Opções de disponibilidade|**Nenhuma redundância de infraestrutura necessária**|
-   |Tipo de segurança|**Standard**|
+   |Tipo de segurança|**Máquinas virtuais de início confiável**|
    |Imagem|**Windows 11 Enterprise multissessão + Microsoft 365 Apps, versão 22H2**|
-   |Tamanho da máquina virtual|**Standard D2s v3**|
+   |Tamanho da máquina virtual|**Standard DC2s_v3**|
    |Número de VMs|**2**|
    |Tipo de disco de SO|**SSD Standard**|
    |Rede virtual|**az140-aadds-vnet11a**|

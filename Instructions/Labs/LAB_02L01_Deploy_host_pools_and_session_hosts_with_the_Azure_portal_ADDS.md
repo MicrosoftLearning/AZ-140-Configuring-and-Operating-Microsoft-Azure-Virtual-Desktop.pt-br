@@ -113,12 +113,12 @@ As principais tarefas desse exercício são as seguintes:
    |Tipo de máquina virtual|Máquina Virtual do Azure|
    |Localização da máquina virtual|o nome da região do Azure na qual você implantou recursos no laboratório anterior|
    |Opções de disponibilidade|**Nenhuma redundância de infraestrutura necessária**|
-   |Tipo de segurança|**Standard**|
+   |Tipo de segurança|**Máquinas virtuais de início confiável**|
    |Imagem|**Windows 11 Enterprise multissessão + Microsoft 365 Apps, versão 22H2**|
-   |Tamanho da máquina virtual|**Standard D2s v3**|
+   |Tamanho da máquina virtual|**Standard DC2s_v3**|
    |Número de VMs|**2**|
    |Tipo de disco de SO|**SSD Standard**|
-   |Tamanho do disco de SO|**Redimensionar para 128GB (P10)**|
+   |Tamanho do disco de SO|**Tamanho padrão (128 GB)**|
    |Diagnóstico de Inicialização|**Habilitar com a conta de armazenamento gerenciada (recomendado)**|
    |Rede virtual|**az140-adds-vnet11**|
    |Sub-rede|**hp1-Subnet (10.0.1.0/24)**|
@@ -160,11 +160,11 @@ As principais tarefas desse exercício são as seguintes:
    |Prefixo do nome|**az140-21-p1**|
    |Localização da máquina virtual|o nome da região do Azure na qual você implantou as duas primeiras VMs de host de sessão|
    |Opções de disponibilidade|**Nenhuma redundância de infraestrutura necessária**|
-   |Tipo de segurança|**Standard**|
+   |Tipo de segurança|**Máquinas virtuais de início confiável**|
    |Imagem|**Windows 11 Enterprise multissessão + Microsoft 365 Apps, versão 22H2**|
    |Número de VMs|**1**|
    |Tipo de disco de SO|**SSD Standard**|
-   |Tamanho do disco de SO|**Tamanho padrão (128GB)**|
+   |Tamanho do disco de SO|**Tamanho padrão (128 GB)**|
    |Diagnóstico de Inicialização|**Habilitar com a conta de armazenamento gerenciada (recomendado)**|
    |Rede virtual|**az140-adds-vnet11**|
    |Sub-rede|**hp1-Subnet (10.0.1.0/24)**|
