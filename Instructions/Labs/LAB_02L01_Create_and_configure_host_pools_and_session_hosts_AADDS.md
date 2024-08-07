@@ -80,9 +80,12 @@ As principais tarefas desse exercício são as seguintes:
    |Nome do pool de host|**az140-21a-hp1**|
    |Localidade|o nome da região do Azure na qual você implantou a instância do Microsoft Entra DS anteriormente neste laboratório|
    |Ambiente de validação|**Não**|
+   |Tipo de grupo de aplicativos preferencial|**Desktop**|
    |Tipo de pool de host|**Em pool**|
    |Limite máximo da sessão|**12**|
    |Algoritmo de balanceamento de carga|**Amplitude**|
+
+   > **Observação**: se o usuário tem os aplicativos RemoteApp e Desktop publicados, o tipo de grupo de aplicativos preferencial determinará qual deles aparecerá em seu feed.
 
 1. Na guia **Máquinas Virtuais** da folha **Criar um pool de hosts**, especifique as seguintes configurações (deixe as outras com seus padrões) e selecione **Avançar: Workspace >** (substitua o espaço reservado *<Azure_AD_domain_name>* pelo nome do locatário do Microsoft Entra associado à assinatura na qual você implantou a instância do Microsoft Entra DS e substitua o espaço reservado `<password>` pela senha definida ao criar a conta aadadmin1):
 
@@ -270,23 +273,35 @@ As principais tarefas desse exercício são as seguintes:
    > **Observação**: o nome UPN do **aaduser1** deve estar no formato **aaduser1@***<Azure_AD_domain_name>*, em que o espaço reservado * <Azure_AD_domain_name>* corresponde ao nome do locatário do Microsoft Entra associado à assinatura na qual você implantou a instância do Microsoft Entra DS.
 
 1. Na janela **Permanecer conectado a todos os seus aplicativos** desmarque a caixa de seleção **Permitir que minha organização gerencie meu dispositivo** e selecione **Não, entrar somente nesse aplicativo**. 
-1. Verifique se a página **Área de Trabalho Remota** exibe a listagem de aplicativos incluídos nos grupos de aplicativos associados à conta de usuário **aaduser1** por meio de sua associação de grupo. 
+1. Verifique se a página **Área de trabalho remota** exibe  SessionDesktop incluído no grupo de aplicativos da área de trabalho az140-21-hp1-DAG gerado automaticamente, publicado no workspace e associado à conta de usuário **aduser1** por meio de sua associação de grupo. 
+
+   > **Observação**: isso é esperado, pois o **Tipo de grupo de aplicativos preferencial** do pool de host está definido como **Área de trabalho**.
 
 #### Tarefa 3: Testar aplicativos da Área de Trabalho Virtual do Azure
 
-1. Na sessão do Bastion para **az140-cl-vm11a**, na janela cliente da **Área de Trabalho Remota**, na lista de aplicativos, clique duas vezes no **Prompt de Comando** e verifique se ele inicia uma janela do **Prompt de Comando**. Quando solicitado a autenticar, digite a senha definida para a conta de usuário do **aaduser1**, selecione a caixa de seleção **Lembrar-se de mim** e selecione **OK**.
+1. Na sessão do Bastion para **az140-cl-vm11a**, na janela do cliente da **Área de Trabalho Remota**, na lista de aplicativos, clique duas vezes em **SessionDesktop** e verifique se uma sessão da Área de Trabalho Remota é iniciada. 
 
    > **Observação**: Inicialmente, pode levar alguns minutos para o aplicativo ser iniciado, mas, posteriormente, a inicialização do aplicativo deve ser muito mais rápida.
 
-1. No Prompt de Comando, digite **hostname** e pressione a tecla **Enter** para exibir o nome do computador no qual o Prompt de Comando está em execução.
+   > **Observação**: Se você receber o prompt de entrada **Boas-vindas ao Microsoft Teams**, feche-o. 
 
-   > **Observação**: Verifique se o nome exibido é **az140-21-p1-0** ou **az140-21-p1-1** e não**az140-cl-vm11a**.
+1. Na sessão da **Área de Trabalho de Sessão**, clique com o botão direito do mouse em **Iniciar**, selecione **Executar**, na caixa de texto **Abrir**da caixa de diálogo **Executar**, digite **cmd** e selecione **OK**. 
+1. Na sessão da **Área de Trabalho de Sessão**, no Prompt de Comando, digite o **nome do host** e pressione a tecla **Enter** para exibir o nome do computador no qual a sessão da Área de Trabalho Remota está em execução.
+1. Verifique se o nome exibido é **az140-21-p1-0**, **az140-21-p1-1** ou **az140-21-p1-2**.
+1. No Prompt de Comando, digite **logoff** e pressione a tecla **Enter** para fazer logoff da Área de Trabalho de Sessão.
 
+   > **Observação**: em seguida, você modificará o **tipo de grupo de aplicativos preferencial**, definindo-o como **RemoteApp**.
+
+1. Na sessão do Bastion para **az140-cl-vm11a**, na janela do navegador da web que exibe o portal do Azure, pesquise e selecione **Área de Trabalho Virtual do Azure** e, na folha da **Área de Trabalho Virtual do Azure**, na barra de menu vertical, acesse a **seção Gerenciar** e selecione **Pools de hosts**.
+1. Na folha **Pools de host\| da Área de Trabalho Virtual do Azure**, na lista de pools de hosts, selecione **az140-21-hp1**.
+1. Na folha **az140-21-hp1**, vá para a barra de menus vertical e, na seção **Configurações**, selecione **Propriedades**. Em **Tipo de grupo de aplicativos preferencial**, selecione **Aplicativo Remoto** e, em seguida, escolha **Salvar**. 
+1. Na sessão do Bastion para **az140-cl-vm11**, na janela do cliente da **Área de Trabalho Remota**, selecione o símbolo de reticências no canto superior direito e, no menu suspenso, selecione **Atualizar**.
+1. Verifique se a página **Área de Trabalho Remota** exibe os aplicativos individuais incluídos nos dois grupos de aplicativos que você criou e publicou no workspace e que também estão associados à conta de usuário **aduser1** por meio de sua associação de grupo. 
+
+   > **Observação**: isso é o esperado, pois o **Tipo de grupo de aplicativos preferencial** do pool de host agora está definido como **RemoteApp**.
+
+1. Na sessão do Bastion para **az140-cl-vm11a**, na janela cliente da **Área de Trabalho Remota**, na lista de aplicativos, clique duas vezes no **Prompt de Comando** e verifique se ele inicia uma janela do **Prompt de Comando**. Quando solicitado a autenticar, digite a senha definida ao criar a conta de usuário aduser1 **, marque a caixa **de seleção **Lembrar de mim** e selecione **OK.**
 1. No Prompt de Comando, digite **logoff** e pressione a tecla **Enter** para sair da sessão de Aplicativo Remoto atual.
-1. Na sessão do Bastion para **az140-cl-vm11a**, na janela do cliente da **Área de Trabalho Remota**, na lista de aplicativos, clique duas vezes em **SessionDesktop** e verifique se uma sessão da Área de Trabalho Remota é iniciada. 
-1. Na sessão **Área de Trabalho Padrão**, clique com o botão direito do mouse em **Iniciar**, selecione**Executar **, na caixa de texto **Abrir** da caixa de diálogo **Executar**, digite **cmd** e selecione**OK**. 
-1. Na sessão da **Área de Trabalho Padrão**, no Prompt de Comando, digite **hostname** e pressione a tecla **Enter** para exibir o nome do computador no qual a sessão da Área de Trabalho Remota está em execução.
-1. Verifique se o nome exibido é **az140-21-p1-0** ou **az140-21-p1-1**.
 
 ### Exercício 3: Parar e desalocar VMs do Azure provisionadas e usadas no laboratório
 
