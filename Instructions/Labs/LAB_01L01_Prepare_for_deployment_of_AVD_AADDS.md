@@ -195,7 +195,7 @@ As principais tarefas desse exercício são as seguintes:
    |Nome|**az140-aadds-vnet11a**|
    |Intervalo de endereços|**10.10.0.0/16**|
    |Nome da sub-rede|**aadds-Subnet**|
-   |Nome da sub-rede|**10.10.0.0/24**|
+   |Intervalo de endereços|**10.10.0.0/24**|
 
 1. De volta à guia **Rede** da folha **Criar rede virtual**, selecione **Avançar** (deixe as outras com seus valores existentes).
 1. Na guia **Administração** da folha **Criar Microsoft Entra Domain Services**, aceite as configurações padrão e selecione **Avançar**.
