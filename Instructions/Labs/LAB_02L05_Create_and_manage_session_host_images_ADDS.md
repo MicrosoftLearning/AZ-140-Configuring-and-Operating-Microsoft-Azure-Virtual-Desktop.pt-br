@@ -267,7 +267,7 @@ As principais tarefas desse exercício são as seguintes:
    |Intervalo de endereços da sub-rede|**10.0.4.0/24**|
 
 1. No computador do laboratório, no portal do Azure, na janela do navegador da Web que exibe o portal do Azure, pesquise e selecione **Área de Trabalho Virtual do Azure**. Na folha **Área de Trabalho Virtual do Azure**, selecione **Pools de Host** e, na folha **Pools de Host \|da Área de Trabalho Virtual do Azure**, selecione **+ Criar**. 
-1. Na guia **Noções básicas** da folha **Criar um pool de hosts**, especifique as seguintes configurações e selecione **Avançar: Máquinas Virtuais >**:
+1. Na guia **Básico** da folha **Criar um pool de hosts**, especifique as seguintes configurações e selecione **Avançar: Máquinas Virtuais >**:
 
    |Configuração|Valor|
    |---|---|
@@ -295,7 +295,7 @@ As principais tarefas desse exercício são as seguintes:
    
 1. Na guia **Máquinas virtuais** da folha **Criar um pool de host**, diretamente abaixo da lista suspensa **Imagem**, clique no link **Ver todas as imagens**.
 1. Na folha **Selecionar uma imagem**, em **Outros Itens**, clique em **Imagens Compartilhadas** e, na lista de imagens compartilhadas, selecione **az140-25-host-image**. 
-1. Na guia **Máquinas Virtuais** da folha **Criar um pool de hosts**, especifique as seguintes configurações e selecione **Avançar: Workspace >**:
+1. De volta à guia **Máquinas Virtuais** da folha **Criar um pool de hosts**, especifique as seguintes configurações e selecione **Avançar: Workspace >**:
 
    |Configuração|Valor|
    |---|---|
