@@ -90,7 +90,7 @@ As principais tarefas desse exercício são as seguintes:
 #### Tarefa 2: Configurar uma pool de host da Área de Trabalho Virtual do Azure
 
 1. Na sessão do Bastion para **az140-dc-vm11**, na janela do Microsoft Edge que exibe o portal do Azure, pesquise e selecione **Área de Trabalho Virtual do Azure**, na folha **Área de Trabalho Virtual do Azure**, selecione **Pools de Host** e, na folha **Área de Trabalho Virtual do Azure\|Pools de Hostda**, selecione **+ Criar**. 
-1. Na guia **Noções Básicas** da folha **Criar um pool de host**, especifique as seguintes configurações e selecione **Avançar: Máquinas Virtuais >** (deixe as outras configurações com seus valores padrão):
+1. Na guia **Básico** da folha **Criar um pool de hosts**, especifique as seguintes configurações e selecione **Avançar: Máquinas virtuais >** (deixe as outras configurações com seus valores padrão):
 
    |Configuração|Valor|
    |---|---|
@@ -106,7 +106,7 @@ As principais tarefas desse exercício são as seguintes:
 
    > **Observação**: se o usuário tem os aplicativos RemoteApp e Desktop publicados, o tipo de grupo de aplicativos preferencial determinará qual deles aparecerá em seu feed.
 
-1. Na guia **Máquinas Virtuais** da folha **Criar um pool de hosts**, especifique as seguintes configurações e selecione **Avançar: Workspace >** (deixe as outras configurações com seus valores padrão):
+1. Na guia **Máquinas virtuais** da folha **Criar um pool de hosts**, especifique as seguintes configurações e selecione **Avançar: Workspace >** (deixe as outras configurações com seus valores padrão):
 
    |Configuração|Valor|
    |---|---|
@@ -154,7 +154,7 @@ As principais tarefas desse exercício são as seguintes:
 1. Na folha **Pools de host\| da Área de Trabalho Virtual do Azure**, na lista de pools de hosts, selecione **az140-21-hp1**.
 1. Na folha **az140-21-hp1**, na barra de menus vertical, na **seção Gerenciar**, selecione **Hosts de sessão** e verifique se o pool consiste em dois hosts. 
 1. Na folha **Hosts de sessão\|az140-21-hp1**, selecione **+ Adicionar**.
-1. Na guia **Noções Básicas** da folha **Adicionar máquinas virtuais a um pool de hosts**, examine as configurações pré-configuradas e selecione **Avançar: Máquinas Virtuais**.
+1. Na guia **Básico** da folha **Adicionar máquinas virtuais a um pool de hosts**, revise as configurações pré-configuradas e selecione **Avançar: Máquinas virtuais**.
 1. Na guia **Máquinas Virtuais** da folha **Adicionar máquinas virtuais a um pool** de hosts, especifique as seguintes configurações e selecione **Revisar + criar** (deixe as outras com suas configurações padrão):
 
    |Configuração|Valor|
@@ -198,7 +198,7 @@ As principais tarefas desse exercício são as seguintes:
 1. Na folha **az140-21-hp1-DAG \| Atribuições**, selecione** + Adicionar **.
 1. Na folha **Selecionar usuários ou grupos de usuários do Microsoft Entra**, selecione** Grupos**, selecione**az140-wvd-pooled** e clique em pool**Selecionar**.
 1. Navegue de volta para a folha **Grupos de Aplicativos\| da Área de Trabalho Virtual do Azure**, selecione **+ Criar**. 
-1. Na guia **Noções básicas** da folha **Criar um grupo de aplicativos**, especifique as seguintes configurações e selecione **Avançar: Aplicativos > **:
+1. Na guia **Básico** da folha **Criar um grupo de aplicativos**, especifique as seguintes configurações e selecione **Avançar: Aplicativos >**:
 
    |Configuração|Valor|
    |---|---|
@@ -238,7 +238,7 @@ As principais tarefas desse exercício são as seguintes:
    |Descrição|**Microsoft PowerPoint**|
    |Exigir linha de comando|**Não**|
 
-1. De volta à guia **Aplicativos** da folha **Criar um grupo de aplicativos**, selecione **Avançar: Atribuições >**.
+1. De volta à guia **Aplicativos** da lâmina **Criar um grupo de aplicativos**, selecione **Avançar: Atribuições >**.
 1. Na guia **Atribuições** da folha **Criar um grupo de aplicativos,** selecione **+ Adicionar usuários ou grupos de usuários do Microsoft Entra**.
 1. Na folha **Selecionar usuários ou grupos de usuários do Microsoft Entra**, selecione**Grupos** e selecione **az140-wvd-remote-app** e clique em **Selecionar**.
 1. De volta à guia **Atribuições** da folha **Criar um grupo de aplicativos**, selecione **Avançar: Workspace >**.
@@ -256,7 +256,7 @@ As principais tarefas desse exercício são as seguintes:
 
 1. Na sessão do Bastion para **az140-dc-vm11**, pesquise e selecione **Área de Trabalho Virtual do Azure** e, na folha **Área de Trabalho Virtual do Azure**, selecione **Grupos de aplicativos**.
 1. Na folha **Grupos de Aplicativos \| da Área de Trabalho Virtual do Azure**, selecione **+ Criar**. 
-1. Na guia **Noções básicas** da folha **Criar um grupo de aplicativos**, especifique as seguintes configurações e selecione **Avançar: Aplicativos >**:
+1. Na guia **Básico** da folha **Criar um grupo de aplicativos**, especifique as seguintes configurações e selecione **Avançar: Aplicativos >**:
 
    |Configuração|Valor|
    |---|---|
@@ -285,7 +285,7 @@ As principais tarefas desse exercício são as seguintes:
    |Caminho do ícone|**C:\Windows\system32\cmd.exe**|
    |Índice do ícone|0|
 
-1. De volta à guia **Aplicativos** da folha **Criar um grupo de aplicativos**, selecione **Avançar: Atribuições >**.
+1. De volta à guia **Aplicativos** da lâmina **Criar um grupo de aplicativos**, selecione **Avançar: Atribuições >**.
 1. Na guia **Atribuições** da folha **Criar um grupo de aplicativos,** selecione **+ Adicionar usuários ou grupos de usuários do Microsoft Entra**.
 1. Na folha **Selecionar usuários ou grupos de usuários do Microsoft Entra**, selecione **grupos**, selecione **az140-wvd-remote-app** e **az140-wvd-admins** e clique em **Selecionar**.
 1. De volta à guia **Atribuições** da folha **Criar um grupo de aplicativos**, selecione **Avançar: Workspace >**.
@@ -301,7 +301,7 @@ As principais tarefas desse exercício são as seguintes:
 
 1. Na sessão do Bastion para **az140-dc-vm11**, na janela do Microsoft Edge exibindo o portal do Azure, pesquise e selecione **Área de Trabalho Virtual do Azure** e, na folha **Área de Trabalho **Virtual do Azure, selecione **Workspaces**.
 1. Na folha **Workspaces\| da Área de Trabalho Virtual do Azure**, selecione **+ Criar**. 
-1. Na guia **Noções básicas** da folha **Criar um workspace**, especifique as seguintes configurações e selecione **Avançar: Grupos de aplicativos >**:
+1. Na guia **Básico** da folha **Criar um espaço de trabalho**, especifique as seguintes configurações e selecione **Avançar: Grupos de aplicativos >**:
 
    |Configuração|Valor|
    |---|---|

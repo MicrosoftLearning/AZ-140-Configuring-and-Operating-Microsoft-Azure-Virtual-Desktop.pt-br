@@ -1,5 +1,3 @@
-**Este curso será desativado em **30/09/2024**. Depois que o curso for desativado, todos os repositórios GitHub serão removidos. Obrigado.**
-
 # AZ-140: Configurar e operar a Área de Trabalho Virtual do Microsoft Azure
 
 - **[Link para laboratórios (formato HTML)](https://microsoftlearning.github.io/AZ-140-Configuring-and-Operating-Microsoft-Azure-Virtual-Desktop/)**

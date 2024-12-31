@@ -114,7 +114,7 @@ As principais tarefas desse exercício são as seguintes:
 
 1. No computador do laboratório, no navegador que exibe o portal do Azure, pesquise e selecione a **Área de Trabalho Virtual do Azure**. 
 1. Na página **Área de Trabalho Virtual do Azure**, selecione **Dimensionamento de Planos** e, em seguida, selecione **+ Criar**.
-1. Na guia **Noções Básicas** do assistente **Criar um plano de dimensionamento**, especifique as seguintes informações e selecione **Avançar: Agenda >** (deixe outras pessoas com seus valores padrão):
+1. Na guia **Básico** do assistente **Criar um plano de dimensionamento**, especifique as seguintes informações e selecione **Avançar: Agendamentos >** (deixe os outros com seus valores padrão):
 
    |Configuração|Valor|
    |---|---|
@@ -184,7 +184,7 @@ As principais tarefas desse exercício são as seguintes:
 
    >**Observação**: O valor do limite de capacidade nesta fase é determinado pelo valor do limite de capacidade de desaceleração.
 
-1. De volta à guia **Agendamentos** do assistente **Criar um plano de dimensionamento**, selecione **Avançar: Atribuições do pool de host >**:
+1. De volta à guia **Agendamentos** do assistente **Criar um plano de dimensionamento**, selecione **Avançar: Atribuições de pool de hosts >**:
 1. Na página **Atribuições do pool de host**, na lista suspensa **Selecionar pool de hosts**, selecione **az140-21-hp1**. Verifique se a caixa de seleção **Habilitar dimensionamento automático** está habilitada, selecione **Examinar + criar** e, em seguida, selecione **Criar**.
 
 
