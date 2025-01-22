@@ -90,7 +90,7 @@ As principais tarefas deste exercício são as seguintes:
 
    **Observação:** A solicitação de aumento de cota requer a entrada com a autenticação multifator (MFA). Se você precisar configurar sua conta com a MFA, consulte [Planejar uma implantação de Autenticação Multifator do Azure Active Directory](https://learn.microsoft.com/en-us/azure/active-directory/authentication/howto-mfa-getstarted). 
    
-1. Na folha **Azure Pass – Patrocínio | Folha Uso + cotas**, selecione **Região**, na lista suspensa, marque a caixa de seleção ao lado do nome da região do Azure que você pretende usar para este laboratório, selecione **Aplicar**, verifique se a entrada **Computação** aparece na lista suspensa à esquerda da entrada **Região** e, na caixa de pesquisa, digite **Standard DSv3**. 
+1. Na folha **Azure Pass – Patrocínio | Uso + cotas**, selecione **Região**, na lista suspensa, marque a caixa de seleção ao lado do nome da região do Azure que você pretende usar para este laboratório, selecione **Aplicar**, verifique se a entrada **Computação** aparece na lista suspensa à esquerda da entrada **Região** e, na caixa de pesquisa, digite **Standard DSv3**. 
 1. Na lista de resultados, marque a caixa de seleção ao lado do item **VCPUs da Família DSv3 Standard**, selecione a entrada **Solicitar aumento de cota** na barra de ferramentas e, na lista suspensa, selecione **Inserir um novo limite**.
 1. No painel **Solicitar aumento de cota**, na caixa de texto de coluna**Novo limite**, digite **30**e selecione **Enviar**.
 1. Se solicitado, no painel **Solicitar aumento de cota**, selecione **Autenticar com a Autenticação multifator** e siga os prompts para autenticação.

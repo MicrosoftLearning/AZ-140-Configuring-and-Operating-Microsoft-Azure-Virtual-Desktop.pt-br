@@ -202,7 +202,7 @@ As principais tarefas desse exercício são as seguintes:
     |Tipo do SO|**Windows**|
     |Tipo de segurança|**Lançamento confiável suportado**|
     |Estado do sistema operacional|**Generalizado**|
-    |Publicador|**MicrosoftWindowsDesktop**|
+    |Editor|**MicrosoftWindowsDesktop**|
     |Oferta|**Windows-11**|
     |SKU|**win11-23h2-avd-m365**|
 

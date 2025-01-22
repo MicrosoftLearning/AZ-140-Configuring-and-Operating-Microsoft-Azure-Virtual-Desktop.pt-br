@@ -354,12 +354,7 @@ As principais tarefas desse exercício são as seguintes:
 
     > **Observação**: para minimizar os custos associados à execução do ambiente de laboratório, você interromperá e desalocará a VM do Azure recém-provisionada.
 
-1. Alterne para a sessão de console no computador do laboratório, no navegador da Web que exibe o portal do Azure, na página  **az140-111e-vm0**, selecione **Visão geral** e, na barra de ferramentas, selecione **Parar**.
-1. Na janela pop-up **Parar esta máquina virtual**, selecione **Sim**.
-
 #### Tarefa 7: Permitir acesso de rede pública a um pool de hosts e workspace
-
-> **Observação**: para eliminar o impacto em outros laboratórios que usam o mesmo ambiente de Área de Trabalho Virtual do Azure, você reverterá as alterações aplicadas na tarefa anterior e permitirá o acesso da rede pública ao pool de hosts e ao workspace que fazem parte do ambiente de Área de Trabalho Virtual do Azure.
 
 1. No computador do laboratório, no navegador da Web que exibe o portal do Azure, pesquise e selecione **Área de Trabalho Virtual do Azure** e, na página **Área de Trabalho Virtual do Azure**, selecione **Workspaces**.
 1. Na página **Área de Trabalho Virtual do Azure \| Workspaces**, selecione **az140-21-ws1**.
