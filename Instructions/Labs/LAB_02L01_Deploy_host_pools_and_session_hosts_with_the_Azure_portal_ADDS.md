@@ -60,7 +60,7 @@ As principais tarefas desse exercício são as seguintes:
 1. Na sessão do Bastion para **az140-dc-vm11**, do **Administrador: Console ISE do Windows PowerShell**: execute o seguinte para criar uma unidade organizacional que hospedará os objetos de computador dos hosts da Área de Trabalho Virtual do Azure:
 
    ```powershell
-   New-ADOrganizationalUnit 'WVDInfra' –path 'DC=adatum,DC=com' -ProtectedFromAccidentalDeletion $false
+   New-ADOrganizationalUnit 'WVDInfra' -path 'DC=adatum,DC=com' -ProtectedFromAccidentalDeletion $false
    ```
 
 1. Do **Administrador: Console ISE do Windows PowerShell**: execute o seguinte para identificar o nome principal do usuário da conta **aduser1**
