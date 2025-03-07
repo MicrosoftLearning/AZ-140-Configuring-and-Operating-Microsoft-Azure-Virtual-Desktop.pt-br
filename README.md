@@ -30,7 +30,9 @@
 
 ## Observações
 
-**Os laboratórios compreendem duas faixas separadas, dependendo do provedor de identidade que você decidir usar.**
+> **Importante**: os laboratórios foram atualizados para direcionar cenários baseados no Microsoft Entra ID de implementação da Área de Trabalho Virtual do Azure (as instruções para este laboratório estão localizadas no diretório **Instruções** -&gt;**Labs_EntraID**  
+
+> **Importante**: as duas faixas a seguir não são mais mantidas ou suportadas (as instruções para este laboratório estão localizadas no diretório **Instruções** -&gt;**Laboratórios**
 
 - Active Directory Domain Services (AD DS). Essa faixa consiste nos seguintes laboratórios:
 
@@ -45,7 +47,7 @@
    - LAB_04L02_Package_AVD_applications_ADDS.md
    - LAB_05L01_Implement_autoscaling_in_host_pools_ADDS.md
 
-- Azure Active Directory Domain Services (Azure AD DS). Essa faixa consiste nos seguintes laboratórios:
+- Microsoft Entra Domain Services (Microsoft Entra DS). Essa faixa consiste nos seguintes laboratórios:
 
    - LAB_01L01_Prepare_for_deployment_of_AVD_AADDS.md
    - LAB_02L01_Create_and_configure_host_pools_and_session_hosts_AADDS.md
