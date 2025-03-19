@@ -85,7 +85,7 @@ As principais tarefas deste exercício são as seguintes:
 
 1. No portal do Azure, pesquise e selecione **Assinaturas** e, na folha **Assinaturas**, selecione a entrada que representa a assinatura do Azure que você pretende usar para esse laboratório.
 1. No portal do Azure, na folha que exibe a assinatura do Azure, no menu vertical à esquerda, na seção **Configurações**, selecione **Uso + cotas**. 
-1. Na folha  **Azure Pass – Patrocínio | Uso + cotas** , selecione as seguintes setas suspensas na barra de pesquisa superior:
+1. Na folha  **Uso + cotas** , selecione as seguintes setas suspensas na barra de pesquisa superior:
 
    |**Configuração**|**Valor**|
    |---|---|
