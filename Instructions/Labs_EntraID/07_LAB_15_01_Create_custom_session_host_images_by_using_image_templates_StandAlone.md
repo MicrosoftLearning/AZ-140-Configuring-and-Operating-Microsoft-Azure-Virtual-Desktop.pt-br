@@ -382,7 +382,7 @@ As principais tarefas desse exercício são as seguintes:
     |Tamanho da máquina virtual|**Standard DC2s_v3**|
     |Número de VMs|**1**|
     |Tipo de disco de SO|**SSD Standard**|
-    |Tamanho do disco de SO|**Tamanho padrão (128 GB)**|
+    |Tamanho do disco de SO|**Tamanho padrão**|
     |Diagnóstico de Inicialização|**Habilitar com a conta de armazenamento gerenciada (recomendado)**|
     |Rede virtual|az140-vnet15d|
     |Sub-rede|**hp1-Subnet**|

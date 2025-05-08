@@ -85,7 +85,7 @@ As principais tarefas desse exercício são as seguintes:
 1. Na lista de pastas de trabalho da **Área de Trabalho Virtual do Windows**, na seção **Área de Trabalho Virtual do Windows**, selecione a pasta de trabalho **Insights**.
 1. Na página **Área de Trabalho Virtual do Azure \| Pastas de Trabalho \| Insights**, revise as mensagens de aviso indicando que o workspace e os hosts de sessão não estão enviando dados para o workspace e selecione o link **Configuração de pasta de trabalho** para reparar o problema.
 1. Na página **CheckAMAConfiguration**, na guia **Configurações de diagnóstico de recursos**, na lista suspensa **Workspace do Log Analytics**, selecione **az140-laworkspace41e**.
-1. Na página **CheckAMAConfiguration**, na guia **Configurações de diagnóstico de recursos**, na seção **Host pool az140-21-hp1**, observe a mensagem de aviso indicando que nenhuma configuração de diagnóstico existente foi encontrada para o pool de hosts selecionado e selecione **Configurar pool de hosts**.
+1. Na página **CheckAMAConfiguration**, na guia **Configurações de diagnóstico de recursos**, na seção **Pool de host az140-21-hp1**, observe a mensagem de aviso indicando que nenhuma configuração de diagnóstico existente foi encontrada para o pool de host selecionado e escolha **Configurar pool de host**.
 1. No painel **Implantar modelo**, selecione **Implantar**.
 
     > **Observação**: isso habilita efetivamente as seguintes tabelas de diagnóstico no workspace do Log Analytics de destino:
@@ -116,27 +116,26 @@ As principais tarefas desse exercício são as seguintes:
 
     > **Observação**: aguarde até que a implantação seja concluída. Essa etapa geralmente leva menos de um minuto.
 
-1. Na página **CheckAMAConfiguration**, na guia **Selecionar configurações de dados do host**, selecione o ícone **Atualizar** (uma seta circular) na barra de ferramentas.
+1. Na página **CheckAMAConfiguration**, na guia **Configurações dos dados do host da sessão**, clique no ícone **Atualizar** (uma seta circular) na barra de ferramentas.
 
     > **Observação**: antes de prosseguir, certifique-se de que o DCR recém-criado esteja listado na subseção **DCRs disponíveis** da seção **Criar DCR**. Se esse não for o caso, aguarde mais um minuto e atualize a página novamente.
 
-1. Na guia **Selecionar configurações de dados do host**, na lista suspensa **DCR selecionado**, selecione a entrada que começa com **microsoft-avdi-** prefix.
-1. Na guia **Selecionar configurações de dados do host**, na seção **Associações DCR**, selecione **Implantar associação**.
-1. No painel **Implantar modelo**, selecione **Implantar**.
+1. Na guia **Configurações dos dados do host da sessão**, na lista suspensa **DCR selecionado**, selecione a entrada que começa com o prefixo **microsoft-avdi-**.
+1. Se necessário, na guia **Configurações dos dados do host de sessão**, na seção **Associações DCR**, selecione **Implantar associação** e, no painel **Implantar modelo**, selecione **Implantar**.
 
     > **Observação**: isso associa efetivamente o DCR recém-criado aos hosts de sessão no pool de hosts **az140-21-hp1**.
 
     > **Observação**: aguarde até que a implantação seja concluída. Essa etapa geralmente leva menos de um minuto.
 
-1. Na página **CheckAMAConfiguration**, na guia **Selecionar configurações de dados do host**, selecione o ícone **Atualizar** (uma seta circular) na barra de ferramentas.
-1. Na guia **Selecionar configurações de dados do host**, na seção **Hosts de sessão sem extensão do Azure Monitor**, selecione **Adicionar extensão**.
+1. Na página **CheckAMAConfiguration**, na guia **Configurações dos dados do host da sessão**, clique no ícone **Atualizar** (uma seta circular) na barra de ferramentas.
+1. Na guia **Configurações dos dados do host da sessão**, na seção **Hosts de sessão sem extensão do Azure Monitor**, selecione **Adicionar extensão**.
 1. No painel **Implantar modelo**, selecione **Implantar**.
 
     > **Observação**: isso efetivamente instala a extensão do Azure Monitor nos hosts de sessão no pool de hosts **az140-21-hp1**.
 
     > **Observação**: aguarde até que a implantação seja concluída. Isso pode levar cerca de um minuto.
 
-1. Na página **CheckAMAConfiguration**, na guia **Selecionar configurações de dados do host**, selecione o ícone **Atualizar** (uma seta circular) na barra de ferramentas.
+1. Na página **CheckAMAConfiguration**, na guia **Configurações dos dados do host da sessão**, clique no ícone **Atualizar** (uma seta circular) na barra de ferramentas.
 1. Verifique se não há mensagens de erro ou aviso exibidas. 
 1. Navegue até o topo da página **CheckAMAConfiguration**, selecione a guia **Dados gerados** e, em seguida, selecione o ícone **Atualizar** (uma seta circular) na barra de ferramentas.
 1. Revise as seções que exibem gráficos que representam dados coletados, incluindo **Dados faturados nas últimas 24 horas**, **Contadores de desempenho** e **Eventos**.

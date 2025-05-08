@@ -58,7 +58,7 @@ Como nenhum desses critérios se aplica ao computador de laboratório, é necess
 
     > **Observação**: use as credenciais da conta `User1-` listada na guia Recursos no lado direito da janela da sessão de laboratório.
 
-1. No navegador da Web que exibe o portal do Azure, na página **az140-21-hp1**, na barra de menu vertical, na seção **Configurações**, selecione a entrada **Propriedades do RDP**.
+1. No navegador da Web que exibe o portal do Azure, na página do pool de host da Área de Trabalho Virtual do Azure **az140-21-hp1**, na barra de menu vertical, na seção **Configurações**, selecione a entrada **Propriedades do RDP**.
 1. Na página **az140-21-hp1 \| Propriedades do RDP**, selecione a guia **Avançado**. 
 1. Na guia **Avançado** da página **az140-21-hp1 \| Propriedades do RDP**, na caixa de texto **Propriedades do RDP**, anexe a seguinte cadeia de caracteres ao conteúdo existente (certifique-se de adicionar um ponto e vírgula inicial (`;`) se necessário para separar esta cadeia de caracteres daquela que a precede):
 
