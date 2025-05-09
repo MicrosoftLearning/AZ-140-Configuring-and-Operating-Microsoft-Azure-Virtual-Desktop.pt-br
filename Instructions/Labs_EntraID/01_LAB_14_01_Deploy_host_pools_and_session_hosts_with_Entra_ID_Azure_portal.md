@@ -14,7 +14,7 @@ lab:
 
 ## Tempo estimado
 
-30 minutos
+60 minutos
 
 ## Cenário do laboratório
 
@@ -72,7 +72,7 @@ As principais tarefas desse exercício são as seguintes:
     |Region|O nome da região do Azure onde você deseja implantar o ambiente de área de trabalho virtual do Azure|
 
 1. Na guia **Segurança**, aceite as configurações padrão e selecione **Avançar**.
-1. Na guia **Endereços IP**, especifique as seguintes configurações:
+1. Na guia **Endereços IP**, aplique as seguintes configurações (modifique o padrão, se necessário):
 
     |Configuração|Valor|
     |---|---|

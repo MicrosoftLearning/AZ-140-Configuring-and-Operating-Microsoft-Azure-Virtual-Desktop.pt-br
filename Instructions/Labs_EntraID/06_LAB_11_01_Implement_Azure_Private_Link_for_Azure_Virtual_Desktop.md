@@ -15,7 +15,7 @@ lab:
 
 ## Tempo estimado
 
-40 minutos
+60 minutos
 
 ## Cenário do laboratório
 
@@ -55,7 +55,7 @@ As principais tarefas desse exercício são as seguintes:
 
 - Todas as partes da conexão — descoberta de feed inicial, download de feed e conexões de sessão remota para clientes e hosts de sessão — usam rotas privadas.
 - O download de feed e as conexões de sessão remota para clientes e hosts de sessão usam rotas privadas, mas a descoberta de feed inicial usa rotas públicas. 
-- Somente conexões de sessão remota para clientes e hosts de sessão usam rotas privadas, mas a descoberta de feed inicial e o download de feed usam rotas públicas.
+- Somente as conexões de sessão remota para clientes e hosts de sessão usam rotas privadas, mas a descoberta de feed inicial e o download de feed usam rotas públicas.
 - As VMs de host de sessão e de clientes usam rotas públicas. O Link Privado não é usado neste cenário.
 
 > **Observação**: neste laboratório, você implementará a primeira disposição.
@@ -222,14 +222,14 @@ As principais tarefas desse exercício são as seguintes:
     |Assinatura|O nome da assinatura do Azure que você está usando neste laboratório|
     |Grupo de recursos|**az140-11e-RG**|
 
-    > **Observação**: esta etapa aproveitará a zona DNS privada chamada **privatelink.wvd.microsoft.com** que você criou em uma das tarefas anteriores.
+    > **Observação**: esta etapa resultará na criação de uma zona DNS privada chamada **privatelink-global.wvd.microsoft.com**.
 
 1. Na guia **Tags** da página **Criar um endpoint privado**, selecione **Avançar: Revisar + criar**.
 1. Na guia **Revisar + criar** da página **Criar um ponto de extremidade privado**, selecione **Criar**.
 
     > **Observação:** prossiga para a próxima etapa sem aguardar a conclusão da implantação. A implantação pode levar cerca de 1 minuto.
 
-    > **Observação**: você precisa criar um ponto de extremidade privado para o sub-recurso de feed para cada espaço de trabalho que deseja usar com o Link Privado.
+    > **Observação**: você precisa criar um ponto de extremidade privado para o sub-recurso global de cada espaço de trabalho que deseja usar com o Link Privado.
 
     > **Observação**: para que as alterações de rede entrem em vigor, você precisa reiniciar os hosts da sessão no pool de host de destino.
 
@@ -275,7 +275,7 @@ As principais tarefas desse exercício são as seguintes:
     |Region|O nome da região do Azure em que você implantou o ambiente da Área de Trabalho Virtual do Azure|
     |Opções de disponibilidade|**Nenhuma redundância de infraestrutura necessária**|
     |Tipo de segurança|**Standard**|
-    |Imagem|**Windows 11 Pro, versão 23H2 - x64 Gen2**|
+    |Imagem|**Windows 11 Pro, versão 24H2 - x64 Gen2**|
     |Tamanho|**Standard DC2s_v3**|
     |Nome de Usuário|Qualquer nome de usuário válido de sua escolha|
     |Senha|Qualquer senha válida de sua escolha|

@@ -174,7 +174,7 @@ As principais tarefas desse exercício são as seguintes:
     |Algoritmo de balanceamento de carga|**Profundidade**|
     |Percentual mínimo de hosts ativos (%)|**10**|
     |Limite de capacidade (%)|**80**|
-    |Forçar o logoff de usuários|**Não**|
+    |Forçar usuários a sair|**Não**|
     |Parar as VMs quando|**As VMs não têm sessões ativas ou desconectadas**|
 
     > **Observação**: a configuração **Porcentagem mínima de hosts ativos (%)** designa a porcentagem mínima de máquinas virtuais de host de sessão que você gostaria de acessar para deceleração e horários de menor pico. Por exemplo, se a **Porcentagem mínima de hosts ativos (%)** for definida como 10% e o número total de hosts de sessão no seu pool de hosts for 3, o dimensionamento automático garantirá que no mínimo 1 host de sessão esteja disponível para receber conexões de usuários.
@@ -233,7 +233,7 @@ As principais tarefas desse exercício são as seguintes:
 
     > **Observação**: em seguida, você avaliará a configuração do limite de capacidade de **Desaceleração** ajustando sua janela de tempo. 
 
-1. Na página **az140-21-hp1 \| Hosts de sessão**, no menu de navegação vertical, na seção **Configurações**, selecione **Planos de dimensionamento** e, em seguida, na página **Planos de dimensionamento**, selecione **az140-scalingplan412e**.
+1. Na página **az140-21-hp1 \| Hosts de sessão**, no menu de navegação vertical, na seção **Gerenciar**, selecione **Planos de dimensionamento** e, em seguida, na página **Planos de dimensionamento**, selecione **az140-scalingplan412e**.
 1. Na página **az140-scalingplan412e**, no menu de navegação vertical, na seção **Configurações**, selecione **Programações** e depois selecione **week_schedule**.
 1. No painel **week_schedule**, navegue até a guia **Desaceleração** e ajuste o valor da configuração **Hora de início (sistema de 12 horas)** para qualquer hora entre **Hora de início (sistema de 12 horas)** da fase **Horário de pico** e sua hora atual.
 
