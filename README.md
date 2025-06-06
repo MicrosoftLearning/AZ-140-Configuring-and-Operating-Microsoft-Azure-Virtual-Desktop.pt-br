@@ -32,7 +32,7 @@
 
 > **Importante**: os laboratórios foram atualizados para direcionar cenários baseados no Microsoft Entra ID de implementação da Área de Trabalho Virtual do Azure (as instruções para este laboratório estão localizadas no diretório **Instruções** -&gt;**Labs_EntraID**  
 
-> **Importante**: as duas faixas a seguir não são mais mantidas ou aceitas e serão removidas em 1º de junho de 2025 (as instruções para este laboratório estão localizadas no diretório **Instruções** -&gt;**Laboratórios**)
+> **Importante**: as duas faixas a seguir não são mais mantidas ou aceitas (as instruções para este laboratório estão localizadas no diretório **Instruções** -&gt;**Labs_Legacy**)
 
 - Active Directory Domain Services (AD DS). Essa faixa consiste nos seguintes laboratórios:
 
