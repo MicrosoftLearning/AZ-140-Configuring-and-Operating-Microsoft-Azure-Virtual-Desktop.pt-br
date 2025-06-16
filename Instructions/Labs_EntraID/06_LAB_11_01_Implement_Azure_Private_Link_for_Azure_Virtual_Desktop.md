@@ -352,8 +352,6 @@ As principais tarefas desse exercício são as seguintes:
 
    > **Observação**: opcionalmente, você pode tentar assinar o feed e se conectar ao workspace da Área de Trabalho Virtual do Azure a partir do computador do laboratório para validar se essa conexão falhará. 
 
-    > **Observação**: para minimizar os custos associados à execução do ambiente de laboratório, você interromperá e desalocará a VM do Azure recém-provisionada.
-
 #### Tarefa 7: Permitir acesso de rede pública a um pool de hosts e workspace
 
 1. No computador do laboratório, no navegador da Web que exibe o portal do Azure, pesquise e selecione **Área de Trabalho Virtual do Azure** e, na página **Área de Trabalho Virtual do Azure**, selecione **Workspaces**.
