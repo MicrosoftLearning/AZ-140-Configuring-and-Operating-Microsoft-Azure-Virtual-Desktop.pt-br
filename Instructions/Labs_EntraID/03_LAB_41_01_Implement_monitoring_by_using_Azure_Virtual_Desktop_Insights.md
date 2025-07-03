@@ -110,8 +110,8 @@ As principais tarefas desse exercício são as seguintes:
 
 1. Na página **CheckAMAConfiguration**, na guia **Configurações de diagnóstico de recursos**, selecione o ícone **Atualizar** (uma seta circular) na barra de ferramentas.
 1. Revise a seção **Workspace az140-21-ws1** e verifique se as configurações de diagnóstico estão habilitadas para **allLogs** e se não há mensagens de aviso restantes.
-1. Navegue até o topo da página **CheckAMAConfiguration** e mude para a aba **Selecionar configurações de dados do host**.
-1. Na guia **Selecionar configurações de dados do host**, na seção **Criar DCR**, na lista suspensa **Destino do workspace**, selecione **az140-laworkspace41e** e, em seguida, selecione **Criar regra de coleta de dados**.
+1. Navegue até o topo da página **CheckAMAConfiguration** e mude para a aba **Configurações de dados do host da sessão**.
+1. Na guia **Configurações de dados do host da sessão**, na seção **Criar DCR**, na lista suspensa **Destino do workspace**, selecione **az140-laworkspace41e** e, em seguida, selecione **Criar regra de coleta de dados**.
 1. No painel **Implantar modelo**, selecione **Implantar**.
 
     > **Observação**: aguarde até que a implantação seja concluída. Essa etapa geralmente leva menos de um minuto.
